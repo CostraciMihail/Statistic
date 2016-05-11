@@ -1,5 +1,5 @@
 //
-//  STConnector.swift
+//  STConnectorClass.swift
 //  Statistic
 //
 //  Created by winify on 5/6/16.
@@ -10,18 +10,24 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-let baseUrl: String = "http://192.168.3.145"
-var authToken: String?
-
 
 class STConnectorClass: NSObject {
+
+	let baseUrl: String = "http://192.168.3.145"
+	var authToken: String?
+
 	
 	
 	
-	func logIn(userCredentials params: [String : String] ) -> String {
+	
+	
+	func logIn(userCredentials params: [String : String],
+	                           succesBlock: (token: String?) -> Void,
+							  failureBlock: (failureError: NSError) -> Void ) -> Void {
 		
+		let urlString = baseUrl + "/login"
 		
-		Alamofire.request(.POST, "http://192.168.3.145/login", parameters: params, encoding: .JSON)
+		Alamofire.request(.POST, urlString, parameters: params, encoding: .JSON)
 			.responseJSON { response in
 				
 				switch response.result {
@@ -31,18 +37,47 @@ class STConnectorClass: NSObject {
 						if let value = response.result.value {
 							
 							let json = JSON(value)
-							print("user.token: \(json["token"].string!) ")
-
-							authToken = json["token"].string!
+							self.authToken = json["token"].string!
+							succesBlock(token: self.authToken!)
 						}
 						
 					case .Failure(let error):
-						print(error)
+							print(error)
+							failureBlock(failureError: error)
+					
 					}
 			}
+	}
+	
+	
+	
+	func logOut(succesBlock: () -> Void,
+	            failureBlock: (failureError: NSError) -> Void) -> Void {
+	
+		let urlString = baseUrl + "/logout"
 		
-		
-		return authToken!
+		Alamofire.request(.POST, urlString, parameters: ["token":self.authToken!], encoding: .JSON)
+			.responseString{ response in
+				
+				switch response.result {
+					
+				case .Success:
+					
+					print("Logout succeessfull")
+//					if let value = response.result.value {
+//						
+//						let json = JSON(value)
+//						authToken = json["token"].string!
+//						succesBlock(token: authToken!)
+//					}
+					
+				case .Failure(let error):
+					print(error)
+					failureBlock(failureError: error)
+					
+				}
+		}
+
 	}
 	
 	
