@@ -22,8 +22,8 @@ class STConnectorClass: NSObject {
 	
 	
 	func logIn(userCredentials params: [String : String],
-	                           succesBlock: (token: String?) -> Void,
-							  failureBlock: (failureError: NSError) -> Void ) -> Void {
+						  succesBlock: (token: String?) -> Void,
+						 failureBlock: (failureError: NSError) -> Void ) -> Void {
 		
 		let urlString = baseUrl + "/login"
 		
@@ -52,7 +52,7 @@ class STConnectorClass: NSObject {
 	
 	
 	func logOut(succesBlock: () -> Void,
-	            failureBlock: (failureError: NSError) -> Void) -> Void {
+			   failureBlock: (failureError: NSError) -> Void) -> Void {
 	
 		let urlString = baseUrl + "/logout"
 		
@@ -63,13 +63,9 @@ class STConnectorClass: NSObject {
 					
 				case .Success:
 					
+					succesBlock()
 					print("Logout succeessfull")
-//					if let value = response.result.value {
-//						
-//						let json = JSON(value)
-//						authToken = json["token"].string!
-//						succesBlock(token: authToken!)
-//					}
+
 					
 				case .Failure(let error):
 					print(error)
@@ -81,6 +77,84 @@ class STConnectorClass: NSObject {
 	}
 	
 	
+	
+	func startTime(succesBlock: () -> Void,
+	              failureBlock: (failureError: NSError) -> Void) -> Void {
+		
+		let urlString = baseUrl + "/start"
+		
+		Alamofire.request(.POST, urlString, parameters: ["token":self.authToken!], encoding: .JSON)
+			.responseString{ response in
+				
+				switch response.result {
+					
+				case .Success:
+					
+					succesBlock()
+					print("StartTime succeessfull")
+	
+					
+				case .Failure(let error):
+					print(error)
+					failureBlock(failureError: error)
+					
+				}
+		}
+		
+	}
+	
+	
+	func stopTime(succesBlock: () -> Void,
+				 failureBlock: (failureError: NSError) -> Void) -> Void {
+		
+		let urlString = baseUrl + "/stop"
+		
+		Alamofire.request(.POST, urlString, parameters: ["token":self.authToken!], encoding: .JSON)
+			.responseString{ response in
+				
+				switch response.result {
+					
+				case .Success:
+					
+					succesBlock()
+					print("stopTime succeessfull")
+					
+					
+				case .Failure(let error):
+					print(error)
+					failureBlock(failureError: error)
+					
+				}
+		}
+		
+	}
+	
+	
+	
+	func userStatistic(succesBlock: (params: String?) -> Void,
+	              failureBlock: (failureError: NSError) -> Void) -> Void {
+		
+		let urlString = baseUrl + "/stop"
+		
+		Alamofire.request(.POST, urlString, parameters: ["token":self.authToken!], encoding: .JSON)
+			.responseString{ response in
+				
+				switch response.result {
+					
+				case .Success:
+					
+					succesBlock(params: response.result.description)
+					print("stopTime succeessfull")
+					
+					
+				case .Failure(let error):
+					print(error)
+					failureBlock(failureError: error)
+					
+				}
+		}
+		
+	}
 	
 	
 }

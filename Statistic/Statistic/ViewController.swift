@@ -14,6 +14,9 @@ class ViewController: UIViewController {
 
 	@IBOutlet weak var logInButton: UIButton!
 	@IBOutlet weak var logOutButton: UIButton!
+	@IBOutlet weak var label: UILabel!
+	@IBOutlet weak var startTimeButton: UIButton!
+	@IBOutlet weak var stopTimeButton: UIButton!
 	
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -42,13 +45,17 @@ class ViewController: UIViewController {
 		                succesBlock: { (token) in
 							
 							if let tmpToken = token {
+								
 								print("Log in with Succes: \(tmpToken)")
+								self.label.text = ""
+								self.label.text = "Log in with Succes"
 							}
-							
 							
 							
 		}) { (failureError) in
 			
+			self.label.text = ""
+			self.label.text = "Log in failure"
 		}
 	}
 	
@@ -57,18 +64,44 @@ class ViewController: UIViewController {
 		
 		connector.logOut({ (token) in
 			
-			
+			self.label.text = ""
+			self.label.text = "Log out with Succes"
 			
 			}) { (failureError) in
 				
-				
-				
+				self.label.text = ""
+				self.label.text = "Log out failure: \(failureError)"
 		}
-		
-		
 	}
 	
+	@IBAction func startTimeButtonPressed(sender: AnyObject) {
+		
+		connector.startTime({ () in
+			
+			self.label.text = ""
+			self.label.text = "Start with Success"
+			
+		}) { (failureError) in
+			
+			self.label.text = ""
+			self.label.text = "Failure to start time: \(failureError)"
+		}
+	}
 	
+	@IBAction func stopTimeButtonPressed(sender: AnyObject) {
+	
+		connector.stopTime({ () in
+			
+			self.label.text = ""
+			self.label.text = "Stop with Success"
+			
+		}) { (failureError) in
+			
+			self.label.text = ""
+			self.label.text = "Failure to Stop Time: \(failureError)"
+		}
+		
+	}
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()

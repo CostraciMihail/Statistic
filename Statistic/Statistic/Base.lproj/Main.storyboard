@@ -18,17 +18,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lih-cB-ouY">
-                                <rect key="frame" x="125" y="78" width="71" height="30"/>
+                                <rect key="frame" x="125" y="38" width="71" height="30"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NLh-ZJ-1Gj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nou-OT-cFn">
-                                <rect key="frame" x="125" y="150" width="71" height="30"/>
+                                <rect key="frame" x="125" y="89" width="71" height="30"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aiL-Ox-680"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6h-ko-bgz">
+                                <rect key="frame" x="42" y="396" width="237" height="64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrw-da-w4M">
+                                <rect key="frame" x="94" y="178" width="132" height="38"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startTimeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jqH-Pz-YlT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHF-uN-HV5">
+                                <rect key="frame" x="94" y="238" width="132" height="35"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopTimeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VRg-ve-DFM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -36,8 +56,11 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="label" destination="L6h-ko-bgz" id="cu6-Zt-dTM"/>
                         <outlet property="logInButton" destination="lih-cB-ouY" id="rUx-xx-OfE"/>
                         <outlet property="logOutButton" destination="nou-OT-cFn" id="xfk-p4-JJF"/>
+                        <outlet property="startTimeButton" destination="Nrw-da-w4M" id="c6i-ZP-c0L"/>
+                        <outlet property="stopTimeButton" destination="yHF-uN-HV5" id="ut7-SF-9Lk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
