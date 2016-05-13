@@ -14,6 +14,7 @@ import SwiftyJSON
 class STUserConnector: STConnector {
 
 	
+	
 	func logIn(userCredentials params: [String : String],
 						  succesBlock: (token: String?) -> Void,
 						 failureBlock: (failureError: NSError) -> Void ) -> Void {
@@ -43,13 +44,41 @@ class STUserConnector: STConnector {
 			}
 		}
 
-		
-	
-	
-	
 	}
 
 
+	
+	func logoOut(succesBlock: (token: String?) -> Void,
+	             failureBlock: (failureError: NSError) -> Void ) -> Void {
+		
+		
+		
+		let request: Request = self.requestWithParametres( parametres: ["token": self.authToken!],
+		                                                   serviceUrl: "/logout",
+		                                                  requesMethod: .REQUEST_METHOD_POST)!
+		
+		
+		request.responseJSON { (response) in
+			
+			switch response.result {
+				
+			case .Success:
+				
+				succesBlock(token: self.authToken!)
+
+				
+			case .Failure(let error):
+				print(error)
+				failureBlock(failureError: error)
+				
+			}
+		}
+		
+		
+		
+		
+		
+	}
 
 
 

@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Statistic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="STLoginViewController" customModule="Statistic" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,45 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="c5J-e7-Pn3">
+                                <rect key="frame" x="49" y="217" width="223" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2QM-L2-h0Z">
+                                <rect key="frame" x="49" y="260" width="223" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lih-cB-ouY">
-                                <rect key="frame" x="125" y="38" width="71" height="30"/>
+                                <rect key="frame" x="49" y="308" width="223" height="30"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NLh-ZJ-1Gj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nou-OT-cFn">
-                                <rect key="frame" x="125" y="89" width="71" height="30"/>
-                                <state key="normal" title="Log Out"/>
-                                <connections>
-                                    <action selector="logOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aiL-Ox-680"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6h-ko-bgz">
-                                <rect key="frame" x="42" y="396" width="237" height="64"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrw-da-w4M">
-                                <rect key="frame" x="94" y="178" width="132" height="38"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startTimeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jqH-Pz-YlT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHF-uN-HV5">
-                                <rect key="frame" x="94" y="238" width="132" height="35"/>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="stopTimeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VRg-ve-DFM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8M-aM-gVy">
-                                <rect key="frame" x="94" y="296" width="132" height="30"/>
-                                <state key="normal" title="User Statistic"/>
-                                <connections>
-                                    <action selector="userStatisticButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B6I-of-FNy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,12 +39,9 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="label" destination="L6h-ko-bgz" id="cu6-Zt-dTM"/>
                         <outlet property="logInButton" destination="lih-cB-ouY" id="rUx-xx-OfE"/>
-                        <outlet property="logOutButton" destination="nou-OT-cFn" id="xfk-p4-JJF"/>
-                        <outlet property="startTimeButton" destination="Nrw-da-w4M" id="c6i-ZP-c0L"/>
-                        <outlet property="stopTimeButton" destination="yHF-uN-HV5" id="ut7-SF-9Lk"/>
-                        <outlet property="userStatisticButton" destination="q8M-aM-gVy" id="nBR-rh-uWJ"/>
+                        <outlet property="passwordTextField" destination="2QM-L2-h0Z" id="IhH-eQ-En9"/>
+                        <outlet property="userNameTextField" destination="c5J-e7-Pn3" id="5Gh-eo-77x"/>
                         <segue destination="dR8-rT-Cq7" kind="show" identifier="tabBarSegue" id="qGB-Ul-AeT"/>
                     </connections>
                 </viewController>
@@ -130,7 +103,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghT-Sk-tVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690" y="159"/>
+            <point key="canvasLocation" x="525" y="143"/>
         </scene>
     </scenes>
 </document>
