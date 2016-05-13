@@ -8,11 +8,12 @@
 
 import Foundation
 
-struct UserStruct {
-	
-	let userName : String
-	let password : String
-	
-	var token : String
 
+class User: NSObject {
+	
+	static let sharedInstance = User()
+	
+	override init() { }
+	
+	
 }

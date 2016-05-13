@@ -31,10 +31,10 @@
                                     <action selector="logOutButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aiL-Ox-680"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6h-ko-bgz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6h-ko-bgz">
                                 <rect key="frame" x="42" y="396" width="237" height="64"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrw-da-w4M">
@@ -51,6 +51,13 @@
                                     <action selector="stopTimeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VRg-ve-DFM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8M-aM-gVy">
+                                <rect key="frame" x="94" y="296" width="132" height="30"/>
+                                <state key="normal" title="User Statistic"/>
+                                <connections>
+                                    <action selector="userStatisticButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B6I-of-FNy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -61,11 +68,69 @@
                         <outlet property="logOutButton" destination="nou-OT-cFn" id="xfk-p4-JJF"/>
                         <outlet property="startTimeButton" destination="Nrw-da-w4M" id="c6i-ZP-c0L"/>
                         <outlet property="stopTimeButton" destination="yHF-uN-HV5" id="ut7-SF-9Lk"/>
+                        <outlet property="userStatisticButton" destination="q8M-aM-gVy" id="nBR-rh-uWJ"/>
+                        <segue destination="dR8-rT-Cq7" kind="show" identifier="tabBarSegue" id="qGB-Ul-AeT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="521" y="453"/>
+            <point key="canvasLocation" x="85" y="143"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="0NX-3f-AIA">
+            <objects>
+                <viewController id="Z1B-mN-Cfh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n8X-aY-Xpu"/>
+                        <viewControllerLayoutGuide type="bottom" id="4cb-5x-YjF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vWi-6p-KHN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.87450980389999999" green="0.0" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="r94-hu-6u4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ie3-wE-F3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1543" y="601"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="Ogj-ti-0ne">
+            <objects>
+                <viewController id="tHk-qG-10j" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M6i-g9-oUd"/>
+                        <viewControllerLayoutGuide type="bottom" id="6y9-PE-qPS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kXa-az-Fr7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.5160626089" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="3BR-mn-3CJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I4w-42-MG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1544" y="-59"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4de-20-QXO">
+            <objects>
+                <tabBarController id="dR8-rT-Cq7" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="GJk-Mt-Daq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="tHk-qG-10j" kind="relationship" relationship="viewControllers" id="uLQ-04-HZy"/>
+                        <segue destination="Z1B-mN-Cfh" kind="relationship" relationship="viewControllers" id="1js-AK-eaE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghT-Sk-tVJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690" y="159"/>
         </scene>
     </scenes>
 </document>

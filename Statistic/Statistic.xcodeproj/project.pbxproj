@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		473FFED61CE5CBE3003BBABE /* STConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473FFED51CE5CBE3003BBABE /* STConnector.swift */; };
+		473FFED81CE5DE9C003BBABE /* STUserConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473FFED71CE5DE9C003BBABE /* STUserConnector.swift */; };
+		473FFEDA1CE5E807003BBABE /* STLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473FFED91CE5E807003BBABE /* STLoginViewController.swift */; };
 		4744A75B1CDCA92D000D022B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4744A75A1CDCA92D000D022B /* Alamofire.framework */; };
 		4744A75D1CDCA930000D022B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4744A75C1CDCA930000D022B /* SwiftyJSON.framework */; };
 		4744A7611CDCAA82000D022B /* STUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4744A7601CDCAA82000D022B /* STUser.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		473FFED51CE5CBE3003BBABE /* STConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STConnector.swift; sourceTree = "<group>"; };
+		473FFED71CE5DE9C003BBABE /* STUserConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUserConnector.swift; sourceTree = "<group>"; };
+		473FFED91CE5E807003BBABE /* STLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STLoginViewController.swift; sourceTree = "<group>"; };
 		4744A75A1CDCA92D000D022B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Statistic-ffbqgbisubiunbdtgukxvzduyzkx/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
 		4744A75C1CDCA930000D022B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Statistic-ffbqgbisubiunbdtgukxvzduyzkx/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		4744A7601CDCAA82000D022B /* STUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUser.swift; sourceTree = "<group>"; };
@@ -116,6 +122,9 @@
 			children = (
 				47645B061CD25E4F002EE0BD /* AppDelegate.swift */,
 				47645B081CD25E4F002EE0BD /* ViewController.swift */,
+				473FFED91CE5E807003BBABE /* STLoginViewController.swift */,
+				473FFED51CE5CBE3003BBABE /* STConnector.swift */,
+				473FFED71CE5DE9C003BBABE /* STUserConnector.swift */,
 				4744A7621CDCAB7A000D022B /* STConnectorClass.swift */,
 				4744A7601CDCAA82000D022B /* STUser.swift */,
 				47645B0A1CD25E4F002EE0BD /* Main.storyboard */,
@@ -346,9 +355,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473FFED61CE5CBE3003BBABE /* STConnector.swift in Sources */,
+				473FFED81CE5DE9C003BBABE /* STUserConnector.swift in Sources */,
 				47645B091CD25E4F002EE0BD /* ViewController.swift in Sources */,
 				47645B071CD25E4F002EE0BD /* AppDelegate.swift in Sources */,
 				4744A7631CDCAB7A000D022B /* STConnectorClass.swift in Sources */,
+				473FFEDA1CE5E807003BBABE /* STLoginViewController.swift in Sources */,
 				4744A7611CDCAA82000D022B /* STUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

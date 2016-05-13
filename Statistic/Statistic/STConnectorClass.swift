@@ -64,7 +64,7 @@ class STConnectorClass: NSObject {
 				case .Success:
 					
 					succesBlock()
-					print("Logout succeessfull")
+					print("Logout successful")
 
 					
 				case .Failure(let error):
@@ -91,7 +91,7 @@ class STConnectorClass: NSObject {
 				case .Success:
 					
 					succesBlock()
-					print("StartTime succeessfull")
+					print("StartTime successful")
 	
 					
 				case .Failure(let error):
@@ -117,7 +117,7 @@ class STConnectorClass: NSObject {
 				case .Success:
 					
 					succesBlock()
-					print("stopTime succeessfull")
+					print("stopTime successful")
 					
 					
 				case .Failure(let error):
@@ -134,7 +134,7 @@ class STConnectorClass: NSObject {
 	func userStatistic(succesBlock: (params: String?) -> Void,
 	              failureBlock: (failureError: NSError) -> Void) -> Void {
 		
-		let urlString = baseUrl + "/stop"
+		let urlString = baseUrl + "/statistics"
 		
 		Alamofire.request(.POST, urlString, parameters: ["token":self.authToken!], encoding: .JSON)
 			.responseString{ response in
@@ -144,7 +144,8 @@ class STConnectorClass: NSObject {
 				case .Success:
 					
 					succesBlock(params: response.result.description)
-					print("stopTime succeessfull")
+					print("User Statistic success")
+					print("\(response)")
 					
 					
 				case .Failure(let error):
