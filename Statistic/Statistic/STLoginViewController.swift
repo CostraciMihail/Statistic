@@ -8,6 +8,8 @@
 
 import UIKit
 
+let appDelegate: AppDelegate = AppDelegate()
+
 class STLoginViewController: STBaseViewController {
 
 	let connector: STConnectorClass
@@ -34,24 +36,33 @@ class STLoginViewController: STBaseViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		
+		self.userNameTextField.text! = "mcostraci"
+		self.passwordTextField.text! = "Roller.sl92"
 
 	}
 
 	
 	@IBAction func logInButtonPressed(sender: AnyObject) {
 	
-//		let parametres: [String : String] = ["username": "mcostrac", "password": "Roller.sl92"]
 		let parametres: [String : String] = ["username": self.userNameTextField.text!, "password": self.passwordTextField.text!]
 		
 		userConnector.logIn(userCredentials: parametres,
 								succesBlock: { (token) in
 			
-				print("Log in with Success token: \(token!)")
+									
+				appDelegate.user.userName =  self.userNameTextField.text!
+				appDelegate.user.password = self.passwordTextField.text!
+				appDelegate.user.token = token!
+				
+				print("appDelegate.user.userName: \(appDelegate.user.userName)")
+				print("appDelegate.user.password: \(appDelegate.user.password)")
+				print("appDelegate.user.token: \(appDelegate.user.token)")
+				print("appDelegate.user.fullName: \(appDelegate.user.fullName)")
+									
 				self.performSegueWithIdentifier("tabBarSegue", sender: nil)
 
 									
-			
 			}) { (failureError) in
 				
 				print("Log in with failure: \(failureError)")

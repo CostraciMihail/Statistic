@@ -8,12 +8,16 @@
 
 import Foundation
 
-
-class User: NSObject {
+class User: AnyObject {
+	
+	var userName: String?
+	var password: String?
+	var fullName: String?
+	var token   : String?
 	
 	static let sharedInstance = User()
 	
-	override init() { }
+	required init() {}
 	
 	
 }

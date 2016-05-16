@@ -42,7 +42,7 @@
                         <outlet property="logInButton" destination="lih-cB-ouY" id="rUx-xx-OfE"/>
                         <outlet property="passwordTextField" destination="2QM-L2-h0Z" id="IhH-eQ-En9"/>
                         <outlet property="userNameTextField" destination="c5J-e7-Pn3" id="5Gh-eo-77x"/>
-                        <segue destination="dR8-rT-Cq7" kind="show" identifier="tabBarSegue" id="qGB-Ul-AeT"/>
+                        <segue destination="dR8-rT-Cq7" kind="presentation" identifier="tabBarSegue" modalTransitionStyle="crossDissolve" id="qGB-Ul-AeT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -9,7 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AlamofireObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Statistic.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>22DA0CCAB1B6847A3FC009BD96B94C92</key>
+		<key>037557B33F124E9308AE53972D4B1A9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>315DF94B86BFE0C307DEE3BF88305F49</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -32,7 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E8DDE173D21EF2DFB7F491CD4796AE2</key>
+		<key>C5CBCAA97E951CC882334464FBDF983D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5EB43F104C02AAEBF87C661F6E75B4E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBD082A0D35F7917EAB9DD9D3CCA9976</key>
 		<dict>
 			<key>primary</key>
 			<true/>
