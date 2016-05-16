@@ -1,3 +1,4 @@
+
 //
 //  STBaseViewController.swift
 //  Statistic
@@ -9,13 +10,24 @@
 import UIKit
 
 class STBaseViewController: UIViewController {
+	
+	let userConnector: STUserConnector
 
 	
-	override func viewDidLoad() {
+	required init?(coder aDecoder: NSCoder) {
 		
+		userConnector = STUserConnector()		
+		super.init(coder: aDecoder)
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
 	}
 	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+	}
 	
 	
 }

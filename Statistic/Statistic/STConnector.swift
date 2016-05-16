@@ -22,7 +22,7 @@ enum REQUEST_METHOD {
 class STConnector: NSObject {
 
 	let baseUrl: String = "http://192.168.3.145"
-	var authToken: String?
+//	var authToken: String?
 
 	
 	 func requestWithParametres(parametres parmas: [String:String], serviceUrl service: String, requesMethod method: REQUEST_METHOD) -> Request? {

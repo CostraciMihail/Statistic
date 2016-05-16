@@ -131,31 +131,4 @@ class STConnectorClass: NSObject {
 	
 	
 	
-	func userStatistic(succesBlock: (params: String?) -> Void,
-	              failureBlock: (failureError: NSError) -> Void) -> Void {
-		
-		let urlString = baseUrl + "/statistics"
-		
-		Alamofire.request(.POST, urlString, parameters: ["token":self.authToken!], encoding: .JSON)
-			.responseString{ response in
-				
-				switch response.result {
-					
-				case .Success:
-					
-					succesBlock(params: response.result.description)
-					print("User Statistic success")
-					print("\(response)")
-					
-					
-				case .Failure(let error):
-					print(error)
-					failureBlock(failureError: error)
-					
-				}
-		}
-		
-	}
-	
-	
 }

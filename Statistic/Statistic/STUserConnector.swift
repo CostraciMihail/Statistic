@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class STUserConnector: STConnector {
 
+	var user : STUserMapper = STUserMapper.sharedInstance!
 	
 	
 	func logIn(userCredentials params: [String : String],
@@ -33,8 +34,9 @@ class STUserConnector: STConnector {
 				if let value = response.result.value {
 					
 					let json = JSON(value)
-					self.authToken = json["token"].string!
-					succesBlock(token: self.authToken!)
+					self.user.token = json["token"].string!
+					print("self.authToken: \(self.user.token)")
+					succesBlock(token: self.user.token!)
 				}
 				
 			case .Failure(let error):
@@ -52,8 +54,7 @@ class STUserConnector: STConnector {
 	             failureBlock: (failureError: NSError) -> Void ) -> Void {
 		
 		
-		
-		let request: Request = self.requestWithParametres( parametres: ["token": self.authToken!],
+		let request: Request = self.requestWithParametres( parametres: ["token": self.user.token!],
 		                                                   serviceUrl: "/logout",
 		                                                  requesMethod: .REQUEST_METHOD_POST)!
 		
@@ -64,7 +65,7 @@ class STUserConnector: STConnector {
 				
 			case .Success:
 				
-				succesBlock(token: self.authToken!)
+				succesBlock(token: self.user.token!)
 
 				
 			case .Failure(let error):
@@ -73,14 +74,62 @@ class STUserConnector: STConnector {
 				
 			}
 		}
-		
-		
-		
-		
-		
+	
 	}
 
 
 
+	func startTime(succesBlock: () -> Void,
+				  failureBlock: (failureError: NSError) -> Void) -> Void {
+		
+		let urlString = baseUrl + "/start"
+		
+		Alamofire.request(.POST, urlString, parameters: ["token":self.user.token!], encoding: .JSON)
+			.responseString{ response in
+				
+				switch response.result {
+					
+				case .Success:
+					
+					succesBlock()
+					print("StartTime successful")
+					
+					
+				case .Failure(let error):
+					print(error)
+					failureBlock(failureError: error)
+					
+				}
+		}
+		
+	}
+	
+	
+	
+	func stopTime(succesBlock: () -> Void,
+				 failureBlock: (failureError: NSError) -> Void) -> Void {
+		
+		let urlString = baseUrl + "/stop"
+		
+		Alamofire.request(.POST, urlString, parameters: ["token":self.user.token!], encoding: .JSON)
+			.responseString{ response in
+				
+				switch response.result {
+					
+				case .Success:
+					
+					succesBlock()
+					print("stopTime successful")
+					
+					
+				case .Failure(let error):
+					print(error)
+					failureBlock(failureError: error)
+					
+				}
+		}
+		
+	}
+	
 
 }

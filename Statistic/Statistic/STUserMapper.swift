@@ -16,10 +16,13 @@ class STUserMapper: Mappable {
 	var password: String?
 	var fullName: String?
 	var token   : String?
+	var timeStatistic: STTimeStatistic?
 	
 	static let sharedInstance = STUserMapper()
 	
-	required init?() {}
+	required init?() {
+	
+	}
 	
 	required init?(_ map: Map) {
 		
