@@ -14,12 +14,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-Statistic.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RealmSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,12 +52,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>037557B33F124E9308AE53972D4B1A9A</key>
+		<key>23183A76868862615877A2FCD07CB6FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>315DF94B86BFE0C307DEE3BF88305F49</key>
+		<key>3D6F05D704EBAAD5B54868CF51B924AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,12 +67,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>86FCAFBE3ACE0BF6FEB45151E8D15D55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97123660F94728B1D4227F10613DC374</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C5CBCAA97E951CC882334464FBDF983D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E5EB43F104C02AAEBF87C661F6E75B4E</key>
+		<key>F831852D7F125168B1EF17FC76AB893C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA073A2B6A40241050D91303EE6DF561</key>
 		<dict>
 			<key>primary</key>
 			<true/>

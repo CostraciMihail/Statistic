@@ -13,11 +13,11 @@ class STMainViewController: STBaseViewController {
 
 	var timeIsStarted: Bool = false	
 	let statisticConnector: STStatisticConnnector = STStatisticConnnector()
-	
-	
-	
 	@IBOutlet weak var timeLabel: UILabel!
 	@IBOutlet weak var stopStartButton: UIButton!
+	@IBOutlet weak var logOutButton: UIButton!
+	
+	
 	
 	//MARK: View Cicle
 	//MARK:
@@ -119,6 +119,29 @@ class STMainViewController: STBaseViewController {
 		}
 	}
 	
+	
+	@IBAction func logOutButtonPressed(sender: AnyObject) {
+		
+		SVProgressHUD.show()
+		
+		userConnector.logoOut({ (token) in
+			
+			SVProgressHUD.showSuccessWithStatus("Log Out Success")
+			SVProgressHUD.dismissWithDelay(1.5)
+			
+			self.performSegueWithIdentifier(segueIdentifierOpenLoginView, sender: nil)
+			
+			}) { (failureError) in
+			
+				SVProgressHUD.showErrorWithStatus(failureError.description)
+				SVProgressHUD.dismissWithDelay(3.0)
+				
+		}
+	}
+	
+	
+	//MARK:OTHER
+	//MARK:
 	func changeTitleButton(timeIsStarted isStarted: Bool) -> Void {
 		
 		if  isStarted {

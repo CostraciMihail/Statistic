@@ -42,17 +42,17 @@
                         <outlet property="logInButton" destination="lih-cB-ouY" id="rUx-xx-OfE"/>
                         <outlet property="passwordTextField" destination="2QM-L2-h0Z" id="IhH-eQ-En9"/>
                         <outlet property="userNameTextField" destination="c5J-e7-Pn3" id="5Gh-eo-77x"/>
-                        <segue destination="dR8-rT-Cq7" kind="presentation" identifier="tabBarSegue" modalTransitionStyle="crossDissolve" id="qGB-Ul-AeT"/>
+                        <segue destination="dR8-rT-Cq7" kind="presentation" identifier="openMainView" modalTransitionStyle="crossDissolve" id="qGB-Ul-AeT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85" y="143"/>
         </scene>
-        <!--Item 2-->
+        <!--Statistic-->
         <scene sceneID="0NX-3f-AIA">
             <objects>
-                <viewController storyboardIdentifier="STChartViewControllerID" id="Z1B-mN-Cfh" customClass="STChartViewController" customModule="Statistic" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="STChartViewControllerID" title="Statistic" id="Z1B-mN-Cfh" customClass="STChartViewController" customModule="Statistic" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n8X-aY-Xpu"/>
                         <viewControllerLayoutGuide type="bottom" id="4cb-5x-YjF"/>
@@ -60,9 +60,24 @@
                     <view key="view" contentMode="scaleToFill" id="vWi-6p-KHN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.87450980389999999" green="0.0" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ji-ho-esb" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="12" y="28" width="296" height="209"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-Mv-xxE" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="12" y="284" width="296" height="189"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="r94-hu-6u4"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="Statistic" id="r94-hu-6u4"/>
+                    <connections>
+                        <outlet property="PieChartView" destination="EIe-Mv-xxE" id="0sq-CY-t2o"/>
+                        <outlet property="barChartView" destination="4ji-ho-esb" id="FCp-OS-MSy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ie3-wE-F3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,18 +108,27 @@
                                     <action selector="stopStartTimeButtonPressed:" destination="tHk-qG-10j" eventType="touchUpInside" id="Qmu-Bv-xpq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhZ-Sm-Gvr">
+                                <rect key="frame" x="16" y="20" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="tHk-qG-10j" eventType="touchUpInside" id="Nnd-Yu-Tm9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="3BR-mn-3CJ"/>
+                    <tabBarItem key="tabBarItem" title="Time" id="3BR-mn-3CJ"/>
                     <connections>
+                        <outlet property="logOutButton" destination="RhZ-Sm-Gvr" id="rDn-x6-UNy"/>
                         <outlet property="stopStartButton" destination="nrV-xQ-Bar" id="b6M-N1-Eod"/>
                         <outlet property="timeLabel" destination="pBf-Xw-IfS" id="hio-qU-b4Z"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showLogInViewSegue" modalTransitionStyle="coverVertical" id="l72-Tk-1T9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4w-42-MG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544" y="-59"/>
+            <point key="canvasLocation" x="1543" y="-161"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4de-20-QXO">

@@ -13,14 +13,10 @@ let appDelegate: AppDelegate = AppDelegate()
 
 class STLoginViewController: STBaseViewController {
 
-	
-
 	@IBOutlet weak var userNameTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
 	@IBOutlet weak var logInButton: UIButton!
-	
-	
-	
+
 	
 
 	required init?(coder aDecoder: NSCoder) {
@@ -61,7 +57,7 @@ class STLoginViewController: STBaseViewController {
 				appDelegate.user.password = self.passwordTextField.text!
 
 				
-				self.performSegueWithIdentifier("tabBarSegue", sender: nil)
+				self.performSegueWithIdentifier(segueIdentifierOpenMainView, sender: nil)
 
 									
 			}) { (failureError) in

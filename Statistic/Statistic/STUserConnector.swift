@@ -57,10 +57,10 @@ class STUserConnector: STConnector {
 		
 		
 		let request: Request =
-		self.requestWithParametres(parametres: ["token": self.user.token!],
+		self.requestWithParametres(parametres: ["token": appDelegate.user.token!],
 								   serviceUrl: "/logout",
 								  requesMethod: .REQUEST_METHOD_POST)!
-									request.responseJSON { (response) in
+									request.responseString { (response) in
 										
 							print("response \(response.result.description)")
 							print("respond: \(response.debugDescription)")

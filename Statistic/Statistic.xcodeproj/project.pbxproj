@@ -26,6 +26,8 @@
 		47645B1C1CD25E4F002EE0BD /* StatisticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47645B1B1CD25E4F002EE0BD /* StatisticTests.swift */; };
 		47645B271CD25E4F002EE0BD /* StatisticUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47645B261CD25E4F002EE0BD /* StatisticUITests.swift */; };
 		47B6FC561CE9C61B00387549 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B6FC551CE9C61B00387549 /* AlamofireObjectMapper.framework */; };
+		47E22A661CEB2DD80006CE41 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E22A651CEB2DD80006CE41 /* Charts.framework */; };
+		47E22A6B1CEB36060006CE41 /* STAppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E22A6A1CEB36060006CE41 /* STAppConstants.swift */; };
 		47E921901CE9CD3C002DD95B /* STUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E9218F1CE9CD3C002DD95B /* STUserMapper.swift */; };
 		47E921921CE9D584002DD95B /* STMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E921911CE9D584002DD95B /* STMainViewController.swift */; };
 		47E921941CEA01A5002DD95B /* STTimeStatisticMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E921931CEA01A5002DD95B /* STTimeStatisticMapper.swift */; };
@@ -76,6 +78,8 @@
 		47645B261CD25E4F002EE0BD /* StatisticUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticUITests.swift; sourceTree = "<group>"; };
 		47645B281CD25E4F002EE0BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47B6FC551CE9C61B00387549 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Statistic-ffbqgbisubiunbdtgukxvzduyzkx/Build/Products/Debug-iphonesimulator/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
+		47E22A651CEB2DD80006CE41 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Statistic-ffbqgbisubiunbdtgukxvzduyzkx/Build/Products/Debug-iphonesimulator/Charts.framework"; sourceTree = "<group>"; };
+		47E22A6A1CEB36060006CE41 /* STAppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STAppConstants.swift; sourceTree = "<group>"; };
 		47E9218F1CE9CD3C002DD95B /* STUserMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUserMapper.swift; sourceTree = "<group>"; };
 		47E921911CE9D584002DD95B /* STMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STMainViewController.swift; sourceTree = "<group>"; };
 		47E921931CEA01A5002DD95B /* STTimeStatisticMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTimeStatisticMapper.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47E22A661CEB2DD80006CE41 /* Charts.framework in Frameworks */,
 				47B6FC561CE9C61B00387549 /* AlamofireObjectMapper.framework in Frameworks */,
 				4744A75D1CDCA930000D022B /* SwiftyJSON.framework in Frameworks */,
 				4744A75B1CDCA92D000D022B /* Alamofire.framework in Frameworks */,
@@ -182,6 +187,7 @@
 			children = (
 				47645B061CD25E4F002EE0BD /* AppDelegate.swift */,
 				473FFEE01CE61232003BBABE /* STAppDesign.swift */,
+				47E22A6A1CEB36060006CE41 /* STAppConstants.swift */,
 				4744A7601CDCAA82000D022B /* STUser.swift */,
 				474751041CEB02C200995B80 /* View Cotrollers */,
 				474751071CEB11D000995B80 /* Connectors */,
@@ -216,6 +222,7 @@
 		95C9543775F96B38DA829795 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				47E22A651CEB2DD80006CE41 /* Charts.framework */,
 				47B6FC551CE9C61B00387549 /* AlamofireObjectMapper.framework */,
 				4744A75C1CDCA930000D022B /* SwiftyJSON.framework */,
 				4744A75A1CDCA92D000D022B /* Alamofire.framework */,
@@ -422,6 +429,7 @@
 				473FFED61CE5CBE3003BBABE /* STConnector.swift in Sources */,
 				47E921921CE9D584002DD95B /* STMainViewController.swift in Sources */,
 				47E921901CE9CD3C002DD95B /* STUserMapper.swift in Sources */,
+				47E22A6B1CEB36060006CE41 /* STAppConstants.swift in Sources */,
 				473FFED81CE5DE9C003BBABE /* STUserConnector.swift in Sources */,
 				47E921961CEA0F88002DD95B /* STStatisticMapper.swift in Sources */,
 				47645B091CD25E4F002EE0BD /* STLoginViewController.swift in Sources */,

@@ -9,6 +9,7 @@ pod 'Alamofire', '~> 3.3'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 pod 'AlamofireObjectMapper', '~> 3.0'
 pod 'SVProgressHUD'
+pod 'Charts/Realm'
 
 end
 

@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class STBaseViewController: UIViewController {
 	
@@ -16,7 +17,8 @@ class STBaseViewController: UIViewController {
 	
 	required init?(coder aDecoder: NSCoder) {
 		
-		userConnector = STUserConnector()		
+		userConnector = STUserConnector()
+		SVProgressHUD.setDefaultMaskType(.Clear)
 		super.init(coder: aDecoder)
 	}
 	
