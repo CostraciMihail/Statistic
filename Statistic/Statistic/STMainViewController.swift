@@ -24,6 +24,7 @@ class STMainViewController: STBaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		
 		timeIsStarted = false
 		self.stopStartButton.setTitle("Start Time", forState: .Normal)
 	}
@@ -34,7 +35,6 @@ class STMainViewController: STBaseViewController {
 		
 		self.getStatisticInfo()
 
-		
 	}
 	
 	
@@ -52,6 +52,19 @@ class STMainViewController: STBaseViewController {
 				
 				appDelegate.user.userTime = timeS
 				self.timeLabel.text = appDelegate.user.userTime?.timeWorked
+				
+				if (timeS.loggedIn != nil) {
+					
+					if timeS.loggedIn! {
+						
+						self.changeTitleButton(timeIsStarted: true)
+					
+					} else {
+						
+						self.changeTitleButton(timeIsStarted: false)
+					}
+					
+				}
 			}
 			
 			
@@ -73,13 +86,11 @@ class STMainViewController: STBaseViewController {
 		
 		if timeIsStarted {
 	
-			timeIsStarted = false
 			
 			userConnector.stopTime({ 
 				
 				SVProgressHUD.dismiss()
-				self.stopStartButton.setTitle("Start Time", forState: .Normal)
-
+				self.changeTitleButton(timeIsStarted: false)
 				
 				}, failureBlock: { (failureError) in
 					
@@ -92,13 +103,11 @@ class STMainViewController: STBaseViewController {
 
 		} else {
 			
-			timeIsStarted = true
 
 			userConnector.startTime({
 				
 				SVProgressHUD.dismiss()
-				self.stopStartButton.setTitle("Stop Time", forState: .Normal)
-
+				self.changeTitleButton(timeIsStarted: true)
 				
 				}, failureBlock: { (failureError) in
 					
@@ -107,11 +116,23 @@ class STMainViewController: STBaseViewController {
 					SVProgressHUD.showErrorWithStatus(failureError.description)
 					SVProgressHUD.dismissWithDelay(3.0)
 			})
-
 		}
-		
-		
 	}
+	
+	func changeTitleButton(timeIsStarted isStarted: Bool) -> Void {
+		
+		if  isStarted {
+			
+			timeIsStarted = isStarted
+			self.stopStartButton.setTitle("Stop Time", forState: .Normal)
+		
+		} else {
+			
+			timeIsStarted = isStarted
+			self.stopStartButton.setTitle("Start Time", forState: .Normal)
+		}
+	}
+	
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
