@@ -11,7 +11,7 @@ import SVProgressHUD
 
 class STMainViewController: STBaseViewController {
 
-	var timeIsStarted: Bool = false
+	var timeIsStarted: Bool = false	
 	let statisticConnector: STStatisticConnnector = STStatisticConnnector()
 	
 	
@@ -27,26 +27,48 @@ class STMainViewController: STBaseViewController {
 		timeIsStarted = false
 		self.stopStartButton.setTitle("Start Time", forState: .Normal)
 	}
+
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		statisticConnector.getUserStatistic({ (params) in
-			
-			
-			
-			}) { (failureError) in
-			
-				
-				
-				
-		}
+		self.getStatisticInfo()
+
 		
 	}
 	
 	
+	func getStatisticInfo() -> Void {
+		
+		SVProgressHUD.dismiss()
+		SVProgressHUD.show()
+		SVProgressHUD.dismissWithDelay(1.5)
+		
+		statisticConnector.getStatisticInfo({ (timeStatistic) in
+			
+			SVProgressHUD.dismiss()
+			
+			if let timeS = timeStatistic {
+				
+				appDelegate.user.userTime = timeS
+				self.timeLabel.text = appDelegate.user.userTime?.timeWorked
+			}
+			
+			
+		}) { (failureError) in
+			
+			SVProgressHUD.showErrorWithStatus(failureError.description)
+			SVProgressHUD.dismissWithDelay(3.0)
+			
+		}
+	}
+	
+	
+	//MARK: Actions
+	//MARK:
 	@IBAction func stopStartTimeButtonPressed(sender: AnyObject) {
 	
+		SVProgressHUD.dismiss()
 		SVProgressHUD.show()
 		
 		if timeIsStarted {
@@ -63,6 +85,7 @@ class STMainViewController: STBaseViewController {
 					
 					print("failureError: \(failureError)")
 					SVProgressHUD.showErrorWithStatus(failureError.description)
+					SVProgressHUD.dismissWithDelay(3.0)
 
 					
 			})
@@ -80,7 +103,9 @@ class STMainViewController: STBaseViewController {
 				}, failureBlock: { (failureError) in
 					
 					print("failureError: \(failureError)")
+					SVProgressHUD.dismiss()
 					SVProgressHUD.showErrorWithStatus(failureError.description)
+					SVProgressHUD.dismissWithDelay(3.0)
 			})
 
 		}

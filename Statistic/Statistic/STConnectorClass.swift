@@ -30,6 +30,9 @@ class STConnectorClass: NSObject {
 		Alamofire.request(.POST, urlString, parameters: params, encoding: .JSON)
 			.responseJSON { response in
 				
+				print("response \(response.result.description)")
+				print("respond: \(response.debugDescription)")
+
 				switch response.result {
 					
 					case .Success:
@@ -59,6 +62,9 @@ class STConnectorClass: NSObject {
 		Alamofire.request(.POST, urlString, parameters: ["token":self.authToken!], encoding: .JSON)
 			.responseString{ response in
 				
+				print("response \(response.result.description)")
+				print("respond: \(response.debugDescription)")
+
 				switch response.result {
 					
 				case .Success:
@@ -86,6 +92,10 @@ class STConnectorClass: NSObject {
 		Alamofire.request(.POST, urlString, parameters: ["token":self.authToken!], encoding: .JSON)
 			.responseString{ response in
 				
+				print("response \(response.result.description)")
+				print("respond: \(response.debugDescription)")
+
+				
 				switch response.result {
 					
 				case .Success:
@@ -111,6 +121,10 @@ class STConnectorClass: NSObject {
 		
 		Alamofire.request(.POST, urlString, parameters: ["token":self.authToken!], encoding: .JSON)
 			.responseString{ response in
+				
+				print("response \(response.result.description)")
+				print("respond: \(response.debugDescription)")
+
 				
 				switch response.result {
 					

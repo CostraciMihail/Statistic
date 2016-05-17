@@ -17,6 +17,7 @@
 		4744A75D1CDCA930000D022B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4744A75C1CDCA930000D022B /* SwiftyJSON.framework */; };
 		4744A7611CDCAA82000D022B /* STUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4744A7601CDCAA82000D022B /* STUser.swift */; };
 		4744A7631CDCAB7A000D022B /* STConnectorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4744A7621CDCAB7A000D022B /* STConnectorClass.swift */; };
+		474751061CEB02EF00995B80 /* STChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474751051CEB02EF00995B80 /* STChartViewController.swift */; };
 		47645B071CD25E4F002EE0BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47645B061CD25E4F002EE0BD /* AppDelegate.swift */; };
 		47645B091CD25E4F002EE0BD /* STLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47645B081CD25E4F002EE0BD /* STLoginViewController.swift */; };
 		47645B0C1CD25E4F002EE0BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47645B0A1CD25E4F002EE0BD /* Main.storyboard */; };
@@ -27,7 +28,7 @@
 		47B6FC561CE9C61B00387549 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B6FC551CE9C61B00387549 /* AlamofireObjectMapper.framework */; };
 		47E921901CE9CD3C002DD95B /* STUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E9218F1CE9CD3C002DD95B /* STUserMapper.swift */; };
 		47E921921CE9D584002DD95B /* STMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E921911CE9D584002DD95B /* STMainViewController.swift */; };
-		47E921941CEA01A5002DD95B /* STUserStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E921931CEA01A5002DD95B /* STUserStatistic.swift */; };
+		47E921941CEA01A5002DD95B /* STTimeStatisticMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E921931CEA01A5002DD95B /* STTimeStatisticMapper.swift */; };
 		47E921961CEA0F88002DD95B /* STStatisticMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E921951CEA0F88002DD95B /* STStatisticMapper.swift */; };
 		AD50FEEA5A2BC1ED8E962C53 /* Pods_Statistic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB845A43EF5AA7A599898F /* Pods_Statistic.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		4744A75C1CDCA930000D022B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Statistic-ffbqgbisubiunbdtgukxvzduyzkx/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		4744A7601CDCAA82000D022B /* STUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUser.swift; sourceTree = "<group>"; };
 		4744A7621CDCAB7A000D022B /* STConnectorClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STConnectorClass.swift; sourceTree = "<group>"; };
+		474751051CEB02EF00995B80 /* STChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STChartViewController.swift; sourceTree = "<group>"; };
 		47645B031CD25E4F002EE0BD /* Statistic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Statistic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47645B061CD25E4F002EE0BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47645B081CD25E4F002EE0BD /* STLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLoginViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 		47B6FC551CE9C61B00387549 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Statistic-ffbqgbisubiunbdtgukxvzduyzkx/Build/Products/Debug-iphonesimulator/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
 		47E9218F1CE9CD3C002DD95B /* STUserMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUserMapper.swift; sourceTree = "<group>"; };
 		47E921911CE9D584002DD95B /* STMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STMainViewController.swift; sourceTree = "<group>"; };
-		47E921931CEA01A5002DD95B /* STUserStatistic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUserStatistic.swift; sourceTree = "<group>"; };
+		47E921931CEA01A5002DD95B /* STTimeStatisticMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTimeStatisticMapper.swift; sourceTree = "<group>"; };
 		47E921951CEA0F88002DD95B /* STStatisticMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STStatisticMapper.swift; sourceTree = "<group>"; };
 		5B88174269210DE36035DC52 /* Pods-Statistic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Statistic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Statistic/Pods-Statistic.release.xcconfig"; sourceTree = "<group>"; };
 		88AB845A43EF5AA7A599898F /* Pods_Statistic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Statistic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,37 @@
 			path = Statistic;
 			sourceTree = "<group>";
 		};
+		474751041CEB02C200995B80 /* View Cotrollers */ = {
+			isa = PBXGroup;
+			children = (
+				473FFEDE1CE611F3003BBABE /* STBaseViewController.swift */,
+				47645B081CD25E4F002EE0BD /* STLoginViewController.swift */,
+				47E921911CE9D584002DD95B /* STMainViewController.swift */,
+				474751051CEB02EF00995B80 /* STChartViewController.swift */,
+			);
+			name = "View Cotrollers";
+			sourceTree = "<group>";
+		};
+		474751071CEB11D000995B80 /* Connectors */ = {
+			isa = PBXGroup;
+			children = (
+				473FFED51CE5CBE3003BBABE /* STConnector.swift */,
+				473FFED71CE5DE9C003BBABE /* STUserConnector.swift */,
+				473FFEE21CE6135B003BBABE /* STStatisticConnnector.swift */,
+			);
+			name = Connectors;
+			sourceTree = "<group>";
+		};
+		474751081CEB12C400995B80 /* Object Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				47E9218F1CE9CD3C002DD95B /* STUserMapper.swift */,
+				47E921931CEA01A5002DD95B /* STTimeStatisticMapper.swift */,
+				47E921951CEA0F88002DD95B /* STStatisticMapper.swift */,
+			);
+			name = "Object Mapper";
+			sourceTree = "<group>";
+		};
 		47645AFA1CD25E4F002EE0BD = {
 			isa = PBXGroup;
 			children = (
@@ -149,21 +182,15 @@
 			children = (
 				47645B061CD25E4F002EE0BD /* AppDelegate.swift */,
 				473FFEE01CE61232003BBABE /* STAppDesign.swift */,
-				473FFEDE1CE611F3003BBABE /* STBaseViewController.swift */,
-				47645B081CD25E4F002EE0BD /* STLoginViewController.swift */,
-				47E921911CE9D584002DD95B /* STMainViewController.swift */,
-				473FFED51CE5CBE3003BBABE /* STConnector.swift */,
-				473FFED71CE5DE9C003BBABE /* STUserConnector.swift */,
-				473FFEE21CE6135B003BBABE /* STStatisticConnnector.swift */,
-				4744A7621CDCAB7A000D022B /* STConnectorClass.swift */,
 				4744A7601CDCAA82000D022B /* STUser.swift */,
-				47E9218F1CE9CD3C002DD95B /* STUserMapper.swift */,
-				47E921931CEA01A5002DD95B /* STUserStatistic.swift */,
-				47E921951CEA0F88002DD95B /* STStatisticMapper.swift */,
+				474751041CEB02C200995B80 /* View Cotrollers */,
+				474751071CEB11D000995B80 /* Connectors */,
+				474751081CEB12C400995B80 /* Object Mapper */,
 				47645B0A1CD25E4F002EE0BD /* Main.storyboard */,
 				47645B0D1CD25E4F002EE0BD /* Assets.xcassets */,
 				47645B0F1CD25E4F002EE0BD /* LaunchScreen.storyboard */,
 				47645B121CD25E4F002EE0BD /* Info.plist */,
+				4744A7621CDCAB7A000D022B /* STConnectorClass.swift */,
 			);
 			path = Statistic;
 			sourceTree = "<group>";
@@ -391,7 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				473FFEDF1CE611F3003BBABE /* STBaseViewController.swift in Sources */,
-				47E921941CEA01A5002DD95B /* STUserStatistic.swift in Sources */,
+				47E921941CEA01A5002DD95B /* STTimeStatisticMapper.swift in Sources */,
 				473FFED61CE5CBE3003BBABE /* STConnector.swift in Sources */,
 				47E921921CE9D584002DD95B /* STMainViewController.swift in Sources */,
 				47E921901CE9CD3C002DD95B /* STUserMapper.swift in Sources */,
@@ -402,6 +429,7 @@
 				4744A7631CDCAB7A000D022B /* STConnectorClass.swift in Sources */,
 				473FFEE11CE61232003BBABE /* STAppDesign.swift in Sources */,
 				4744A7611CDCAA82000D022B /* STUser.swift in Sources */,
+				474751061CEB02EF00995B80 /* STChartViewController.swift in Sources */,
 				473FFEE31CE6135B003BBABE /* STStatisticConnnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

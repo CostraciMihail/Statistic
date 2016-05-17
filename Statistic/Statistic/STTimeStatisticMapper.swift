@@ -9,14 +9,18 @@
 import UIKit
 import ObjectMapper
 
-class STTimeStatistic: Mappable {
+class STTimeStatisticMapper: Mappable {
 	
 	var fullName: String?
 	var timeWorked: String?
 	var timeToWork: String?
-	var loggedIn: Bool = false
+	var loggedIn: Bool?
 	var error: String?
 	
+	
+	
+	
+	required init?() {}
 	
 	required init?(_ map: Map) {
 		

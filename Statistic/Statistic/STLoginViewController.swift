@@ -47,18 +47,20 @@ class STLoginViewController: STBaseViewController {
 		
 		userConnector.logIn(userCredentials: parametres,
 								succesBlock: { (token) in
-			
 
+									
 				SVProgressHUD.showSuccessWithStatus("Success")
 				SVProgressHUD.dismissWithDelay(1.0)
-				appDelegate.user.userName =  self.userNameTextField.text!
-				appDelegate.user.password = self.passwordTextField.text!
-				
-				
+								
 				print("appDelegate.user.userName: \(appDelegate.user.userName)")
 				print("appDelegate.user.password: \(appDelegate.user.password)")
 				print("appDelegate.user.fullName: \(appDelegate.user.fullName)")
 				print("token: \(token)")
+				
+				appDelegate.user.userName =  self.userNameTextField.text!
+				appDelegate.user.password = self.passwordTextField.text!
+
+				
 				self.performSegueWithIdentifier("tabBarSegue", sender: nil)
 
 									

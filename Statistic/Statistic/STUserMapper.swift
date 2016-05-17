@@ -16,7 +16,7 @@ class STUserMapper: Mappable {
 	var password: String?
 	var fullName: String?
 	var token   : String?
-	var timeStatistic: STTimeStatistic?
+	var timeStatistic: STTimeStatisticMapper?
 	
 	static let sharedInstance = STUserMapper()
 	

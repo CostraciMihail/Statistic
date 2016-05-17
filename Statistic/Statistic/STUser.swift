@@ -14,6 +14,10 @@ class User: AnyObject {
 	var password: String?
 	var fullName: String?
 	var token   : String?
+	var userStatistic : STStatisticMapper?
+	var userTime: STTimeStatisticMapper?
+	
+	
 	
 	static let sharedInstance = User()
 	

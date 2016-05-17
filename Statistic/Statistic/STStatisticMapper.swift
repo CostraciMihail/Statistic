@@ -18,6 +18,8 @@ class STStatisticMapper: Mappable {
 	var timeToWork: Int?
 
 	
+//	required init() {}
+	
 	required init?(_ map: Map) {
 		
 	}

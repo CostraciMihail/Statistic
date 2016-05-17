@@ -18,35 +18,28 @@ enum REQUEST_METHOD {
 	case REQUEST_METHOD_DELETE
 }
 
-
 class STConnector: NSObject {
 
 	let baseUrl: String = "http://192.168.3.145"
-//	var authToken: String?
 
 	
-	 func requestWithParametres(parametres parmas: [String:String], serviceUrl service: String, requesMethod method: REQUEST_METHOD) -> Request? {
+	
+	 func requestWithParametres(parametres parmas: [String:String],
+							   serviceUrl service: String,
+							  requesMethod method: REQUEST_METHOD) -> Request? {
 		
-		let urlString = baseUrl + service
-		
-		switch method {
+			let urlString = baseUrl + service
 			
-			case .REQUEST_METHOD_GET:
-				return Alamofire.request(.GET, urlString, parameters: parmas, encoding: .JSON)
-
-			
-				
-			case .REQUEST_METHOD_POST:
-				
-			 return	Alamofire.request(.POST, urlString, parameters: parmas, encoding: .JSON)
-			
+			switch method {
+				case .REQUEST_METHOD_GET:
+					return Alamofire.request(.GET, urlString, parameters: parmas, encoding: .JSON)
 
 				
-			
-			default: return nil
-		}
-		
-		
+				case .REQUEST_METHOD_POST:
+				 return	Alamofire.request(.POST, urlString, parameters: parmas, encoding: .JSON)
+
+				default: return nil
+			}
 	}
 	
 }
