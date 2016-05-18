@@ -55,10 +55,12 @@ class STStatisticConnnector: STConnector {
 								case .Failure(let error):
 									
 									if error.code == 401 {
+										print("error.code: \(error.code)")
 										self.reLogIng()
 										
 									} else {
 										print(error)
+										print("error.code: \(error.code)")
 										failureBlock(failureError: error)
 								}
 									
@@ -103,11 +105,13 @@ class STStatisticConnnector: STConnector {
 								case .Failure(let error):
 									
 									if error.code == 401 {
+										print("error.code: \(error.code)")
 										self.reLogIng()
 									
 									} else {
 										print(error)
 										failureBlock(failureError: error)
+										print("error.code: \(error.code)")
 									}
 								
 								}

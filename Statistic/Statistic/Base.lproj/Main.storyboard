@@ -95,28 +95,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="pBf-Xw-IfS">
-                                <rect key="frame" x="33" y="97" width="254" height="106"/>
-                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="58"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrV-xQ-Bar">
-                                <rect key="frame" x="53" y="353" width="215" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrV-xQ-Bar">
+                                <rect key="frame" x="99" y="297" width="122" height="30"/>
                                 <state key="normal" title="Start Time Button"/>
                                 <connections>
                                     <action selector="stopStartTimeButtonPressed:" destination="tHk-qG-10j" eventType="touchUpInside" id="Qmu-Bv-xpq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhZ-Sm-Gvr">
-                                <rect key="frame" x="16" y="20" width="55" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhZ-Sm-Gvr">
+                                <rect key="frame" x="20" y="35" width="55" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cjb-0i-StO"/>
+                                    <constraint firstAttribute="width" constant="55" id="vDd-7Q-n2b"/>
+                                </constraints>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logOutButtonPressed:" destination="tHk-qG-10j" eventType="touchUpInside" id="Nnd-Yu-Tm9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="pBf-Xw-IfS">
+                                <rect key="frame" x="20" y="99" width="280" height="88"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="73"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pBf-Xw-IfS" firstAttribute="top" secondItem="RhZ-Sm-Gvr" secondAttribute="bottom" constant="34" id="AHZ-HC-ibi"/>
+                            <constraint firstItem="nrV-xQ-Bar" firstAttribute="top" secondItem="pBf-Xw-IfS" secondAttribute="bottom" constant="110" id="AQ5-x6-eGo"/>
+                            <constraint firstItem="RhZ-Sm-Gvr" firstAttribute="leading" secondItem="kXa-az-Fr7" secondAttribute="leading" constant="20" id="WhR-Ox-sCo"/>
+                            <constraint firstItem="nrV-xQ-Bar" firstAttribute="centerX" secondItem="kXa-az-Fr7" secondAttribute="centerX" id="gKu-Rw-a8k"/>
+                            <constraint firstItem="pBf-Xw-IfS" firstAttribute="leading" secondItem="kXa-az-Fr7" secondAttribute="leading" constant="20" id="gQT-4n-KNi"/>
+                            <constraint firstAttribute="trailing" secondItem="pBf-Xw-IfS" secondAttribute="trailing" constant="20" id="lEq-EM-25d"/>
+                            <constraint firstItem="RhZ-Sm-Gvr" firstAttribute="top" secondItem="M6i-g9-oUd" secondAttribute="bottom" constant="15" id="u2q-wA-uPC"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Time" id="3BR-mn-3CJ"/>
                     <connections>
