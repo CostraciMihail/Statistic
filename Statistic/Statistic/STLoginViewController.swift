@@ -46,7 +46,7 @@ class STLoginViewController: STBaseViewController {
 
 									
 				SVProgressHUD.showSuccessWithStatus("Success")
-				SVProgressHUD.dismissWithDelay(1.0)
+				SVProgressHUD.dismissWithDelay(0.7)
 								
 				print("appDelegate.user.userName: \(appDelegate.user.userName)")
 				print("appDelegate.user.password: \(appDelegate.user.password)")
@@ -56,9 +56,12 @@ class STLoginViewController: STBaseViewController {
 				appDelegate.user.userName =  self.userNameTextField.text!
 				appDelegate.user.password = self.passwordTextField.text!
 
-				
-				self.performSegueWithIdentifier(segueIdentifierOpenMainView, sender: nil)
-
+									
+				dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -> () in
+					
+					self.performSegueWithIdentifier(segueIdentifierOpenMainView, sender: nil)
+				})
+									
 									
 			}) { (failureError) in
 				

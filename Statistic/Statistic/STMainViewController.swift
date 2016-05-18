@@ -126,10 +126,16 @@ class STMainViewController: STBaseViewController {
 		
 		userConnector.logoOut({ (token) in
 			
-			SVProgressHUD.showSuccessWithStatus("Log Out Success")
-			SVProgressHUD.dismissWithDelay(1.5)
+			SVProgressHUD.show()
+			SVProgressHUD.dismissWithDelay(0.5)
 			
-			self.performSegueWithIdentifier(segueIdentifierOpenLoginView, sender: nil)
+		
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.8 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -> () in
+			
+				self.performSegueWithIdentifier(segueIdentifierOpenLoginView, sender: nil)
+
+			})
+			
 			
 			}) { (failureError) in
 			
