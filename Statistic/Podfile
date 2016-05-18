@@ -10,6 +10,8 @@ pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 pod 'AlamofireObjectMapper', '~> 3.0'
 pod 'SVProgressHUD'
 pod 'Charts/Realm'
+pod 'LNRSimpleNotifications'
+pod 'Masonry'
 
 end
 
