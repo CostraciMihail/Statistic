@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -18,17 +19,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="c5J-e7-Pn3">
-                                <rect key="frame" x="49" y="217" width="223" height="30"/>
+                                <rect key="frame" x="49" y="178" width="223" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2QM-L2-h0Z">
-                                <rect key="frame" x="49" y="260" width="223" height="30"/>
+                                <rect key="frame" x="49" y="222" width="223" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L0D-sU-y9Y">
+                                <rect key="frame" x="36" y="28" width="248" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="5Zw-5k-Thj"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lih-cB-ouY">
-                                <rect key="frame" x="49" y="308" width="223" height="30"/>
+                                <rect key="frame" x="49" y="284" width="223" height="30"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NLh-ZJ-1Gj"/>
@@ -36,6 +43,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L0D-sU-y9Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="7my-KU-JfK"/>
+                            <constraint firstItem="L0D-sU-y9Y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="DKq-Od-t7O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L0D-sU-y9Y" secondAttribute="trailing" constant="20" id="rpY-GX-IhL"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -65,7 +77,7 @@
                                 <rect key="frame" x="12" y="28" width="296" height="209"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-Mv-xxE" customClass="BarChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIe-Mv-xxE" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="12" y="284" width="296" height="189"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -75,8 +87,8 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Statistic" id="r94-hu-6u4"/>
                     <connections>
-                        <outlet property="PieChartView" destination="EIe-Mv-xxE" id="0sq-CY-t2o"/>
                         <outlet property="barChartView" destination="4ji-ho-esb" id="FCp-OS-MSy"/>
+                        <outlet property="pieChartView" destination="EIe-Mv-xxE" id="F7J-cA-gsu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ie3-wE-F3J" userLabel="First Responder" sceneMemberID="firstResponder"/>

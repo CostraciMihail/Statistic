@@ -36,15 +36,6 @@ class STMainViewController: STBaseViewController {
 		self.getStatisticInfo()
 
 		
-		//SHOW NOTIFICATION
-		let notificationMang = STNotificationManager.shareInstance
-		notificationMang.showNotification("Title Notification", body: "Notification body") { () in
-			
-			notificationMang.dismissActiveNotification({ () in
-				
-				
-			})
-		}
 		
 	}
 	

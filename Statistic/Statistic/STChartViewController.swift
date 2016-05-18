@@ -14,7 +14,8 @@ class STChartViewController: STBaseViewController {
 
 	let userStatistic: STStatisticConnnector = STStatisticConnnector()
 	@IBOutlet var barChartView: BarChartView!
-	@IBOutlet weak var PieChartView: BarChartView!
+
+	@IBOutlet weak var pieChartView: PieChartView!
 	var daysOfWeek: [String]!
 	
 	
@@ -37,6 +38,7 @@ class STChartViewController: STBaseViewController {
 		let unitsSold = [8.0, 5.6, 0.0, 0.0, 0.0, 0.0, 0.0]
 		
 		setChart(daysOfWeek, values: unitsSold)
+		setPieChart()
 		
 	}
 	
@@ -85,6 +87,12 @@ class STChartViewController: STBaseViewController {
 		
 		chartDataSet.colors = [NSUIColor.orangeColor()]
 		
+	}
+	
+	func setPieChart() {
+		
+		
+		pieChartView.drawRect(CGRectMake(30, 30, 40, 40))
 	}
 	
 }
