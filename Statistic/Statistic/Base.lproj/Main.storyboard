@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z1B-mN-Cfh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -18,35 +17,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="c5J-e7-Pn3">
-                                <rect key="frame" x="49" y="178" width="223" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="c5J-e7-Pn3">
+                                <rect key="frame" x="49" y="170" width="223" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2QM-L2-h0Z">
+                            <textField opaque="NO" clipsSubviews="YES" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2QM-L2-h0Z">
                                 <rect key="frame" x="49" y="222" width="223" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L0D-sU-y9Y">
-                                <rect key="frame" x="36" y="28" width="248" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lih-cB-ouY">
+                                <rect key="frame" x="49" y="281" width="223" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.5160626089" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="5Zw-5k-Thj"/>
+                                    <constraint firstAttribute="height" constant="35" id="fTQ-St-uJg"/>
                                 </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lih-cB-ouY">
-                                <rect key="frame" x="49" y="284" width="223" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="logInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NLh-ZJ-1Gj"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_winify.png" translatesAutoresizingMaskIntoConstraints="NO" id="L0D-sU-y9Y">
+                                <rect key="frame" x="65" y="50" width="191" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="5Zw-5k-Thj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="L0D-sU-y9Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="7my-KU-JfK"/>
-                            <constraint firstItem="L0D-sU-y9Y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="DKq-Od-t7O"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="L0D-sU-y9Y" secondAttribute="trailing" constant="20" id="rpY-GX-IhL"/>
+                            <constraint firstItem="c5J-e7-Pn3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="170" id="2GW-AA-CX8"/>
+                            <constraint firstItem="L0D-sU-y9Y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="65" id="7my-KU-JfK"/>
+                            <constraint firstItem="c5J-e7-Pn3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="49" id="BGZ-0q-Ikq"/>
+                            <constraint firstAttribute="trailing" secondItem="lih-cB-ouY" secondAttribute="trailing" constant="48" id="CaJ-cz-70E"/>
+                            <constraint firstItem="L0D-sU-y9Y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="DKq-Od-t7O"/>
+                            <constraint firstItem="c5J-e7-Pn3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JJJ-hT-fxc"/>
+                            <constraint firstItem="lih-cB-ouY" firstAttribute="top" secondItem="2QM-L2-h0Z" secondAttribute="bottom" constant="29" id="O3c-lJ-QMh"/>
+                            <constraint firstAttribute="trailing" secondItem="2QM-L2-h0Z" secondAttribute="trailing" constant="48" id="RN5-CH-1vt"/>
+                            <constraint firstAttribute="trailing" secondItem="c5J-e7-Pn3" secondAttribute="trailing" constant="48" id="Yhg-b0-b0P"/>
+                            <constraint firstItem="lih-cB-ouY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aJe-1x-Q1H"/>
+                            <constraint firstItem="2QM-L2-h0Z" firstAttribute="top" secondItem="c5J-e7-Pn3" secondAttribute="bottom" constant="22" id="cv9-5n-Y8Z"/>
+                            <constraint firstItem="2QM-L2-h0Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="49" id="dcj-Cj-8GO"/>
+                            <constraint firstItem="2QM-L2-h0Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="h8R-pD-bMa"/>
+                            <constraint firstItem="lih-cB-ouY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="49" id="oY4-ak-G70"/>
+                            <constraint firstAttribute="trailing" secondItem="L0D-sU-y9Y" secondAttribute="trailing" constant="64" id="rpY-GX-IhL"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -59,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85" y="143"/>
+            <point key="canvasLocation" x="95" y="143"/>
         </scene>
         <!--Statistic-->
         <scene sceneID="0NX-3f-AIA">
@@ -107,13 +123,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrV-xQ-Bar">
-                                <rect key="frame" x="99" y="297" width="122" height="30"/>
-                                <state key="normal" title="Start Time Button"/>
-                                <connections>
-                                    <action selector="stopStartTimeButtonPressed:" destination="tHk-qG-10j" eventType="touchUpInside" id="Qmu-Bv-xpq"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhZ-Sm-Gvr">
                                 <rect key="frame" x="20" y="35" width="55" height="30"/>
                                 <constraints>
@@ -131,11 +140,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrV-xQ-Bar">
+                                <rect key="frame" x="50" y="297" width="220" height="35"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="fya-Fd-t47"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Start Time Button"/>
+                                <connections>
+                                    <action selector="stopStartTimeButtonPressed:" destination="tHk-qG-10j" eventType="touchUpInside" id="Qmu-Bv-xpq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nrV-xQ-Bar" firstAttribute="leading" secondItem="kXa-az-Fr7" secondAttribute="leading" constant="50" id="7i5-pu-pHN"/>
                             <constraint firstItem="pBf-Xw-IfS" firstAttribute="top" secondItem="RhZ-Sm-Gvr" secondAttribute="bottom" constant="34" id="AHZ-HC-ibi"/>
                             <constraint firstItem="nrV-xQ-Bar" firstAttribute="top" secondItem="pBf-Xw-IfS" secondAttribute="bottom" constant="110" id="AQ5-x6-eGo"/>
+                            <constraint firstAttribute="trailing" secondItem="nrV-xQ-Bar" secondAttribute="trailing" constant="50" id="BrF-lE-gZn"/>
                             <constraint firstItem="RhZ-Sm-Gvr" firstAttribute="leading" secondItem="kXa-az-Fr7" secondAttribute="leading" constant="20" id="WhR-Ox-sCo"/>
                             <constraint firstItem="nrV-xQ-Bar" firstAttribute="centerX" secondItem="kXa-az-Fr7" secondAttribute="centerX" id="gKu-Rw-a8k"/>
                             <constraint firstItem="pBf-Xw-IfS" firstAttribute="leading" secondItem="kXa-az-Fr7" secondAttribute="leading" constant="20" id="gQT-4n-KNi"/>
@@ -143,7 +166,9 @@
                             <constraint firstItem="RhZ-Sm-Gvr" firstAttribute="top" secondItem="M6i-g9-oUd" secondAttribute="bottom" constant="15" id="u2q-wA-uPC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Time" id="3BR-mn-3CJ"/>
+                    <tabBarItem key="tabBarItem" title="Time" id="3BR-mn-3CJ">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="logOutButton" destination="RhZ-Sm-Gvr" id="rDn-x6-UNy"/>
                         <outlet property="stopStartButton" destination="nrV-xQ-Bar" id="b6M-N1-Eod"/>
@@ -174,4 +199,7 @@
             <point key="canvasLocation" x="525" y="143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_winify.png" width="215" height="59"/>
+    </resources>
 </document>

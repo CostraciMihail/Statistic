@@ -27,6 +27,9 @@ class STMainViewController: STBaseViewController {
 		
 		timeIsStarted = false
 		self.stopStartButton.setTitle("Start Time", forState: .Normal)
+		self.stopStartButton.backgroundColor = UIColor.greenColor()
+		self.stopStartButton.layer.cornerRadius = 7
+		
 	}
 
 	
@@ -44,7 +47,6 @@ class STMainViewController: STBaseViewController {
 		
 		SVProgressHUD.dismiss()
 		SVProgressHUD.show()
-		SVProgressHUD.dismissWithDelay(1.5)
 		
 		statisticConnector.getStatisticInfo({ (timeStatistic) in
 			
@@ -156,11 +158,13 @@ class STMainViewController: STBaseViewController {
 			
 			timeIsStarted = isStarted
 			self.stopStartButton.setTitle("Stop Time", forState: .Normal)
+			self.stopStartButton.backgroundColor = UIColor.redColor()
 		
 		} else {
 			
 			timeIsStarted = isStarted
 			self.stopStartButton.setTitle("Start Time", forState: .Normal)
+			self.stopStartButton.backgroundColor = UIColor.greenColor()
 		}
 	}
 	
