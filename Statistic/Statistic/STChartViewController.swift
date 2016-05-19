@@ -11,10 +11,9 @@ import SVProgressHUD
 import Charts
 
 class STChartViewController: STBaseViewController {
-
+	
 	let userStatistic: STStatisticConnnector = STStatisticConnnector()
 	@IBOutlet var barChartView: BarChartView!
-
 	@IBOutlet weak var pieChartView: PieChartView!
 	var daysOfWeek: [String]!
 	
@@ -28,7 +27,7 @@ class STChartViewController: STBaseViewController {
 		barChartView.descriptionText = ""
 		
 	}
-	
+
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 		
@@ -63,13 +62,19 @@ class STChartViewController: STBaseViewController {
 			SVProgressHUD.showErrorWithStatus(failureError.description)
 			SVProgressHUD.dismissWithDelay(3.0)
 		}
-		
 	}
 	
 	
 	
 	//MARK: CHART SETTINGS
 	//MARK:
+	
+	/**
+	Setting the chart
+	
+	- parameter dataPoints: name of the points on the chart
+	- parameter values:     value for each point on chart
+	*/
 	func setChart(dataPoints: [String], values: [Double]) {
 		barChartView.noDataText = "You need to provide data for the chart."
 		

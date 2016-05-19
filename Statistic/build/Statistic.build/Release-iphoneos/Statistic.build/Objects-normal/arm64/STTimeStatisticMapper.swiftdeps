@@ -1,0 +1,47 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "STTimeStatisticMapper"
+provides-nominal:
+- "C9Statistic21STTimeStatisticMapper"
+provides-member:
+- ["C9Statistic21STTimeStatisticMapper", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "<-"
+- "STTimeStatisticMapper"
+- "Bool"
+- "Mappable"
+- "Map"
+- "String"
+depends-member:
+- !private ["Ps9AnyObject", "error"]
+- !private ["Ps9AnyObject", "fullName"]
+- !private ["Ps9AnyObject", "loggedIn"]
+- !private ["Ps9AnyObject", "timeToWork"]
+- !private ["Ps9AnyObject", "timeWorked"]
+- ["Ps9AnyObject", ""]
+- ["C9Statistic21STTimeStatisticMapper", "Bool"]
+- ["C9Statistic21STTimeStatisticMapper", "Map"]
+- ["C9Statistic21STTimeStatisticMapper", "String"]
+- ["C9Statistic21STTimeStatisticMapper", "deinit"]
+- ["C9Statistic21STTimeStatisticMapper", "error"]
+- ["C9Statistic21STTimeStatisticMapper", "fullName"]
+- ["C9Statistic21STTimeStatisticMapper", "init"]
+- ["C9Statistic21STTimeStatisticMapper", "loggedIn"]
+- ["C9Statistic21STTimeStatisticMapper", "timeToWork"]
+- ["C9Statistic21STTimeStatisticMapper", "timeWorked"]
+depends-nominal:
+- "Ps9AnyObject"
+- "C9Statistic21STTimeStatisticMapper"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+interface-hash: "a44bb559a114a0e64db00cfba28878c2"

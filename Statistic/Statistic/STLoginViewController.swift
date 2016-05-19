@@ -11,6 +11,7 @@ import SVProgressHUD
 
 let appDelegate: AppDelegate = AppDelegate()
 
+/// LogInViewController - controller which respond for logIn View
 class STLoginViewController: STBaseViewController {
 
 	@IBOutlet weak var userNameTextField: UITextField!
@@ -36,10 +37,13 @@ class STLoginViewController: STBaseViewController {
 		
 		self.userNameTextField.text! = "mcostraci"
 		self.passwordTextField.text! = "Roller.sl92"
-
 	}
 
+	/**
+	Action for LogInButton
 	
+	- parameter sender: action that was made
+	*/
 	@IBAction func logInButtonPressed(sender: AnyObject) {
 	
 		SVProgressHUD.show()
@@ -47,7 +51,13 @@ class STLoginViewController: STBaseViewController {
 	
 	}
 
+	/**
+	Called when 'return' key pressed. return NO to ignore.
 	
+	- parameter textField: textField which is active
+	
+	- returns: bool
+	*/
 	func textFieldShouldReturn(textField: UITextField) -> Bool {
 		
 		//textField with tag 22 is userNameTextField
@@ -65,7 +75,9 @@ class STLoginViewController: STBaseViewController {
 	}
 	
 	
-	
+	/**
+	Send logIn request
+	*/
 	func login() -> Void {
 		
 		SVProgressHUD.show()

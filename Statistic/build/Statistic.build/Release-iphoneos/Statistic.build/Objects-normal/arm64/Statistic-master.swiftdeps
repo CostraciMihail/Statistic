@@ -1,0 +1,20 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
+options: "f3ad95d636d8e706ca3646fabd78603d"
+build_time: [516982008, 6360000]
+inputs:
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STBaseViewController.swift": !dirty [516981806, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STTimeStatisticMapper.swift": !dirty [516790141, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STConnector.swift": !dirty [516898756, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STMainViewController.swift": !dirty [516967911, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STUserMapper.swift": !dirty [516790049, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STAppConstants.swift": !dirty [516810442, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STUserConnector.swift": !dirty [516902192, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STStatisticMapper.swift": !dirty [516791065, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STLoginViewController.swift": !dirty [516981897, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/AppDelegate.swift": !dirty [516702029, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STConnectorClass.swift": !dirty [516789960, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STAppDesign.swift": !dirty [516967605, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STUser.swift": !dirty [516790896, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STChartViewController.swift": !dirty [516981783, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STStatisticConnnector.swift": !dirty [516904035, 0]
+  "/Users/winify/Work/Winify/Statistic/Statistic/Statistic/STNotificationManager.swift": !dirty [516905702, 0]

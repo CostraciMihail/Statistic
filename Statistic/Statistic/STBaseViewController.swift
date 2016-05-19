@@ -10,6 +10,7 @@
 import UIKit
 import SVProgressHUD
 
+/// STBaseViewController - it's base controller from which all ViewControllers will inherit
 class STBaseViewController: UIViewController, UITextFieldDelegate {
 	
 	let userConnector: STUserConnector
