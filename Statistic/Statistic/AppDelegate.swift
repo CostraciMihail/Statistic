@@ -13,10 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 	var user: User = User.sharedInstance
+//	var tabBarController: UIViewController?
+	
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
+		
 		return true
 	}
 
@@ -36,6 +39,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func applicationDidBecomeActive(application: UIApplication) {
 		// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+		
+		
+		let navC = window!.rootViewController as! UINavigationController
+
+		if let tabBar = navC.visibleViewController as? UITabBarController {
+			
+			if let activeVC = tabBar.selectedViewController {
+				
+				if activeVC.isMemberOfClass(STMainViewController) {
+					(activeVC as! STMainViewController).getStatisticInfo()
+				}
+				
+				if activeVC.isMemberOfClass(STChartViewController) {
+					(activeVC as! STChartViewController).getStatistic()
+				}
+				
+			}
+		}
+		
+		
 	}
 
 	func applicationWillTerminate(application: UIApplication) {
