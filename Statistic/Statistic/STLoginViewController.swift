@@ -34,9 +34,13 @@ class STLoginViewController: STBaseViewController {
 		self.passwordTextField.delegate = self
 		self.logInButton.backgroundColor = STAppDesign.mainColor()
 		self.logInButton.layer.cornerRadius = 12
-		self.view.resignFirstResponder()
+
+		if let tmpUserN = NSUserDefaults.standardUserDefaults().stringForKey("username") {
+			
+			self.userNameTextField.text = tmpUserN
+		}
 		
-		self.userNameTextField.text! = "mcostraci"
+//		self.userNameTextField.text! = "mcostraci"
 		self.passwordTextField.text! = "Roller.sl92"
 	}
 
@@ -88,6 +92,7 @@ class STLoginViewController: STBaseViewController {
 		userConnector.logIn(userCredentials: parametres,
 		                    succesBlock: { (token) in
 								
+								NSUserDefaults.standardUserDefaults().setObject(self.userNameTextField.text!, forKey: "username")
 								
 								SVProgressHUD.showSuccessWithStatus("Success")
 								SVProgressHUD.dismissWithDelay(0.7)

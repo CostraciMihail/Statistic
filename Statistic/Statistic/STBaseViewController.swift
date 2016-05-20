@@ -26,6 +26,8 @@ class STBaseViewController: UIViewController, UITextFieldDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.setUpSVProgressHud()
+		
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -33,7 +35,16 @@ class STBaseViewController: UIViewController, UITextFieldDelegate {
 	}
 	
 	
-	
+	func setUpSVProgressHud() -> Void {
+		
+		SVProgressHUD.setMinimumDismissTimeInterval(1.0)
+		SVProgressHUD.setDefaultStyle(.Custom)
+		SVProgressHUD.setBackgroundColor(UIColor.whiteColor())
+		SVProgressHUD.setForegroundColor(STAppDesign.mainColor())
+		SVProgressHUD.setRingThickness(1.5)
+		SVProgressHUD.setDefaultAnimationType(.Flat)
+
+	}
 	
 	
 	override func didReceiveMemoryWarning() {
