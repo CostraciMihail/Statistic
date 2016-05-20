@@ -28,6 +28,7 @@ class STLoginViewController: STBaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.navigationController?.navigationBarHidden = true
 		
 		self.userNameTextField.delegate = self
 		self.passwordTextField.delegate = self

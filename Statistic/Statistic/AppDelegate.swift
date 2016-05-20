@@ -13,13 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 	var user: User = User.sharedInstance
-//	var tabBarController: UIViewController?
 	
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
-		
 		return true
 	}
 
