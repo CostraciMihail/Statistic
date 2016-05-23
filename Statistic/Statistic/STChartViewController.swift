@@ -37,7 +37,8 @@ class STChartViewController: STBaseViewController {
 		let unitsSold = [8.0, 5.6, 0.0, 0.0, 0.0, 0.0, 0.0]
 		
 		setChart(daysOfWeek, values: unitsSold)
-//		setupPieChartViewS()
+//		setupPieChartViewS(pieChartView)
+		setPieChart(daysOfWeek, values: unitsSold)
 		
 	}
 	
@@ -94,7 +95,8 @@ class STChartViewController: STBaseViewController {
         barChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOption: .EaseInOutBounce)
 		
 	}
-//	
+	
+	
 //    func setupPieChartViewS(chartView: PieChartView) {
 //    
 //    chartView.usePercentValuesEnabled = true;
@@ -102,7 +104,6 @@ class STChartViewController: STBaseViewController {
 //    chartView.holeRadiusPercent = 0.58;
 //    chartView.transparentCircleRadiusPercent = 0.61;
 //    chartView.descriptionText = "";
-////    [chartView.setExtraOffsetsWithLeft:5.f top:10.f right:5.f bottom:5.f];
 //    chartView.setExtraOffsets(left: 5.0, top: 10.0, right: 5.0, bottom: 5.0)
 //        
 //    chartView.drawCenterTextEnabled = true;
@@ -112,31 +113,70 @@ class STChartViewController: STBaseViewController {
 //    paragraphStyle.alignment = .Center;
 //    
 //    var centerText: NSMutableAttributedString = NSMutableAttributedString(string: "iOS Charts\nby Daniel Cohen Gindi")
-//    [centerText setAttributes:@{
-//    NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:12.f],
-//    NSParagraphStyleAttributeName: paragraphStyle
-//    } range:NSMakeRange(0, centerText.length)];
-//    [centerText addAttributes:@{
-//    NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:10.f],
-//    NSForegroundColorAttributeName: UIColor.grayColor
-//    } range:NSMakeRange(10, centerText.length - 10)];
-//    [centerText addAttributes:@{
-//    NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-LightItalic" size:10.f],
-//    NSForegroundColorAttributeName: [UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f]
-//    } range:NSMakeRange(centerText.length - 19, 19)];
+//
+////	centerText.setAttributes(<#T##attrs: [String : AnyObject]?##[String : AnyObject]?#>, range: <#T##NSRange#>)
+//		
+////	[centerText setAttributes:@{
+////    NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:12.f],
+////    NSParagraphStyleAttributeName: paragraphStyle
+////    } range:NSMakeRange(0, centerText.length)];
+//////
+////    [centerText addAttributes:@{
+////    NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:10.f],
+////    NSForegroundColorAttributeName: UIColor.grayColor
+////    } range:NSMakeRange(10, centerText.length - 10)];
+////		
+////    [centerText addAttributes:@{
+////    NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-LightItalic" size:10.f],
+////    NSForegroundColorAttributeName: [UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f]
+////    } range:NSMakeRange(centerText.length - 19, 19)];
+//		
 //    chartView.centerAttributedText = centerText;
+//    chartView.drawHoleEnabled = true
+//	chartView.rotationAngle = 0.0
+//    chartView.rotationEnabled = true
+//    chartView.highlightPerTapEnabled = true
 //    
-//    chartView.drawHoleEnabled = YES;
-//    chartView.rotationAngle = 0.0;
-//    chartView.rotationEnabled = YES;
-//    chartView.highlightPerTapEnabled = YES;
-//    
-//    ChartLegend *l = chartView.legend;
-//    l.position = ChartLegendPositionRightOfChart;
-//    l.xEntrySpace = 7.0;
-//    l.yEntrySpace = 0.0;
-//    l.yOffset = 0.0;
-//    }
+//	let l: ChartLegend = chartView.legend
+//    l.position = .RightOfChart
+//    l.xEntrySpace = 7.0
+//    l.yEntrySpace = 0.0
+//    l.yOffset = 0.0
+//		
+//	}
 
+	
+	func setPieChart(dataPoints: [String], values: [Double]) {
+		
+		var dataEntries: [ChartDataEntry] = []
+		
+		for i in 0..<dataPoints.count {
+			let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+			dataEntries.append(dataEntry)
+		}
+		
+		let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Units Sold")
+		let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+		pieChartView.data = pieChartData
+		
+		var colors: [UIColor] = []
+		
+		for i in 0..<dataPoints.count {
+			let red = Double(arc4random_uniform(256))
+			let green = Double(arc4random_uniform(256))
+			let blue = Double(arc4random_uniform(256))
+			
+			let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+			colors.append(color)
+		}
+		
+		pieChartDataSet.colors = colors
+		
+		
+//		let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
+//		let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
+//		lineChartView.data = lineChartData
+		
+	}
 	
 }
