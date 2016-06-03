@@ -18,7 +18,6 @@ class STLoginViewController: STBaseViewController {
 	@IBOutlet weak var passwordTextField: UITextField!
 	@IBOutlet weak var logInButton: UIButton!
 
-	
 
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)

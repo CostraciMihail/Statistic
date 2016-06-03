@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			if let activeVC = tabBar.selectedViewController {
 				
 				if activeVC.isMemberOfClass(STMainViewController) {
-					(activeVC as! STMainViewController).getStatisticInfo()
+					(activeVC as! STMainViewController).getDifferenceOfTime()
 				}
 				
 				if activeVC.isMemberOfClass(STChartViewController) {
