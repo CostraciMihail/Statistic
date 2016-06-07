@@ -29,7 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationDidEnterBackground(application: UIApplication) {
 		// Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
 		// If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-	}
+	
+        let visibleVC = self.getVisibleViewController(STMainViewController)
+        if let visibleVC = visibleVC {
+            (visibleVC as! STMainViewController).timer.invalidate()
+            
+        }
+    
+    }
 
 	func applicationWillEnterForeground(application: UIApplication) {
 		// Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
@@ -38,23 +45,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationDidBecomeActive(application: UIApplication) {
 		// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 		
-		
-		let navC = window!.rootViewController as! UINavigationController
-
-		if let tabBar = navC.visibleViewController as? UITabBarController {
-			
-			if let activeVC = tabBar.selectedViewController {
-				
-				if activeVC.isMemberOfClass(STMainViewController) {
-					(activeVC as! STMainViewController).getDifferenceOfTime()
-				}
-				
-				if activeVC.isMemberOfClass(STChartViewController) {
-					(activeVC as! STChartViewController).getStatistic()
-				}
-				
-			}
-		}
+        var visibleVC = self.getVisibleViewController(STMainViewController)
+        if let visibleVC = visibleVC {
+            (visibleVC as! STMainViewController).getStatisticInfo()
+            
+        }
+        
+        visibleVC = self.getVisibleViewController(STChartViewController)
+        if let visibleVC = visibleVC {
+            (visibleVC as! STChartViewController).getStatistic()
+        }
+        
+//		
+//		let navC = window!.rootViewController as! UINavigationController
+//
+//		if let tabBar = navC.visibleViewController as? UITabBarController {
+//			
+//			if let activeVC = tabBar.selectedViewController {
+//				
+//				if activeVC.isMemberOfClass(STMainViewController) {
+//					(activeVC as! STMainViewController).startTimer()
+//				}
+//				
+//				if activeVC.isMemberOfClass(STChartViewController) {
+//					(activeVC as! STChartViewController).getStatistic()
+//				}
+//				
+//			}
+//		}
 		
 		
 	}
@@ -64,5 +82,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 
 
+    func getVisibleViewController(classNameVC: AnyClass) -> UIViewController? {
+        
+        let navC = window!.rootViewController as! UINavigationController
+        
+        if let tabBar = navC.visibleViewController as? UITabBarController {
+            
+            if let activeVC = tabBar.selectedViewController {
+                if activeVC.isMemberOfClass(classNameVC) {
+                    return activeVC
+                }
+            }
+        }
+    
+        return nil
+    }
+    
+    
+    
 }
 
