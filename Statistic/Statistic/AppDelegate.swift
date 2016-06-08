@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let visibleVC = self.getVisibleViewController(STMainViewController)
         if let visibleVC = visibleVC {
             (visibleVC as! STMainViewController).timer.invalidate()
-            
         }
     
     }

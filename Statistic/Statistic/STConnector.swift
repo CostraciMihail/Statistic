@@ -23,7 +23,6 @@ class STConnector: NSObject {
 	let baseUrl: String = "http://192.168.3.145"
 
 	
-	
 	 func requestWithParametres(parametres parmas: [String:String],
 							   serviceUrl service: String,
 							  requesMethod method: REQUEST_METHOD) -> Request? {
@@ -43,6 +42,38 @@ class STConnector: NSObject {
 	}
 
 
+    func reLogIn(succesBlock succesBlock: () -> Void,
+                failureBlock: (failureError: NSError) -> Void) -> Void {
+        
+        let params = ["username": appDelegate.user.userName!, "password": appDelegate.user.password!]
+        let request: Request = self.requestWithParametres(parametres: params,
+                                                          serviceUrl: "/login",
+                                                          requesMethod: .REQUEST_METHOD_POST)!
+        request.responseJSON { (response) in
+            
+            print("response \(response.result.description)")
+            print("respond: \(response.debugDescription)")
+            
+            switch response.result {
+            case .Success:
+                
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    appDelegate.user.token = json["token"].string!
+                    print("self.authToken: \(appDelegate.user.token)")
+                    
+                    succesBlock()
+                }
+                
+            case .Failure(let error):
+                print(error)
+                failureBlock(failureError: error)
+                
+            }
+        }
+    }
+
+    
 	
 	
 }

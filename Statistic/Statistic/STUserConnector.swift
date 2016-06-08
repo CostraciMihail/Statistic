@@ -47,9 +47,7 @@ class STUserConnector: STConnector {
 										
 									}
 							}
-
 	}
-
 
 	
 	func logoOut(succesBlock: (token: String?) -> Void,
@@ -68,9 +66,18 @@ class STUserConnector: STConnector {
 							
 							switch response.result {
 								case .Success:
-									
-									succesBlock(token: appDelegate.user.token!)
-
+                                    
+                                    if let responseValue = response.result.value {
+                                        if responseValue == "Session expired" {
+                                            self.reLogIn(succesBlock: {
+                                                
+                                               succesBlock(token: appDelegate.user.token!)
+                                                print("LogOut successful")
+                                                
+                                                }, failureBlock: { (failureError) in })
+                                        }
+                                        else { succesBlock(token: appDelegate.user.token!) }
+                                    }
 									
 								case .Failure(let error):
 									print(error)
@@ -78,12 +85,10 @@ class STUserConnector: STConnector {
 									
 								}
 						}
-	
 	}
 
 
-
-	func startTime(succesBlock: () -> Void,
+	func startTime(succesBlock: (response: String?) -> Void,
 				  failureBlock: (failureError: NSError) -> Void) -> Void {
 		
 		
@@ -100,23 +105,29 @@ class STUserConnector: STConnector {
 								
 								switch response.result {
 									case .Success:
-										
-										succesBlock()
-										print("StartTime successful")
-										
-										
+									
+                                        if let responseValue = response.result.value {
+                                            if responseValue == "Session expired" {
+                                                self.reLogIn(succesBlock: {
+                                                    
+                                                    succesBlock(response: response.result.value)
+                                                    print("Time Stopped successful")
+                                                    
+                                                    }, failureBlock: { (failureError) in })
+                                            }
+                                            else { succesBlock(response: response.result.value) }
+                                        }
+                                    
 									case .Failure(let error):
 										print(error)
 										failureBlock(failureError: error)
 										
 									}
 						}
-		
 	}
-	
-	
-	
-	func stopTime(succesBlock: () -> Void,
+
+    
+    func stopTime(succesBlock: (response: String?) -> Void,
 				 failureBlock: (failureError: NSError) -> Void) -> Void {
 		
 		let urlString = baseUrl + "/stop"
@@ -133,11 +144,18 @@ class STUserConnector: STConnector {
 							
 							switch response.result {
 								case .Success:
-									
-									succesBlock()
-									print("stopTime successful")
-									
-									
+                                    
+                                    if let responseValue = response.result.value {
+                                        if responseValue == "Session expired" {
+                                            self.reLogIn(succesBlock: { 
+                                                succesBlock(response: response.result.value)
+                                                print("Time Stopped successful")
+                                                
+                                                }, failureBlock: { (failureError) in })
+                                        }
+                                        else { succesBlock(response: response.result.value) }
+                                    }
+                                
 								case .Failure(let error):
 									print(error)
 									failureBlock(failureError: error)

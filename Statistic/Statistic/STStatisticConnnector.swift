@@ -53,17 +53,9 @@ class STStatisticConnnector: STConnector {
 									}
 								
 								case .Failure(let error):
-									
-									if error.code == 401 {
-										print("error.code: \(error.code)")
-										self.reLogIng()
-										
-									} else {
-										print(error)
-										print("error.code: \(error.code)")
-										failureBlock(failureError: error)
-								}
-									
+                                      print(error)
+                                      print("error.code: \(error.code)")
+                                      failureBlock(failureError: error)
 								}
 						  }
 		
@@ -88,63 +80,28 @@ class STStatisticConnnector: STConnector {
 							
 							switch response.result {
 								case .Success:
-									
+                                
 									if let userStatInfo = response.result.value {
-										
-										print("fullName: \(userStatInfo.fullName)")
+										print("\n\n fullName: \(userStatInfo.fullName)")
 										print("timeWorked: \(userStatInfo.timeWorked)")
 										print("timeToWork: \(userStatInfo.timeToWork)")
 										print("loggedIn: \(userStatInfo.loggedIn)")
 										print("error: \(userStatInfo.error)")
 
 										succesBlock(timeStatistic: userStatInfo)
-										print("\ngetStatisticInfo success")
+										print("\n \n getStatisticInfo success")
 										print("\(response)")
 									}
 								
 								case .Failure(let error):
-									
-									if error.code == 401 {
-										print("error.code: \(error.code)")
-										self.reLogIng()
-									
-									} else {
-										print(error)
-										failureBlock(failureError: error)
-										print("error.code: \(error.code)")
-									}
+                                    print(error)
+                                    failureBlock(failureError: error)
 								
 								}
 						}
 		
 	}
 	
-	
-	func reLogIng() -> Void {
-		
-		let params = ["username": appDelegate.user.userName!, "password": appDelegate.user.token!]
-		let request: Request = self.requestWithParametres(parametres: params,
-		                                                  serviceUrl: "/login",
-		                                                  requesMethod: .REQUEST_METHOD_POST)!
-		request.responseJSON { (response) in
-			
-			print("response \(response.result.description)")
-			print("respond: \(response.debugDescription)")
-			
-			switch response.result {
-			case .Success:
-				
-				if let value = response.result.value {
-					let json = JSON(value)
-					appDelegate.user.token = json["token"].string!
-					print("self.authToken: \(appDelegate.user.token)")
-				}
-				
-			case .Failure(let error):
-				print(error)
-				
-			}
-		}
-	}
+
 	
 }

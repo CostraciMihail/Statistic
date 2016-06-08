@@ -12,14 +12,13 @@ import SVProgressHUD
 class STMainViewController: STBaseViewController {
 
 	var timeIsStarted: Bool = false	
-	let statisticConnector: STStatisticConnnector = STStatisticConnnector()
+	let statisticConnector = STStatisticConnnector()
     var counter: Int64 = 0
     var timer = NSTimer()
     var hours:Int = 0
     var minutes:Int = 0
     var seconds:Int = 0
     
-
 	@IBOutlet weak var timeLabel: UILabel!
 	@IBOutlet weak var stopStartButton: UIButton!
 	@IBOutlet weak var logOutButton: UIButton!
@@ -60,24 +59,24 @@ class STMainViewController: STBaseViewController {
                 appDelegate.user.userTime = timeS
                 self.timeLabel.text = appDelegate.user.userTime?.timeWorked
 
-				if (timeS.loggedIn != nil) {
-					if timeS.loggedIn! {
+				if let loggedIn = timeS.loggedIn {
+					if loggedIn {
 						self.changeTitleButton(timeIsStarted: true)
                         self.startTimer()
 					
 					} else {
+                        self.timer.invalidate()
 						self.changeTitleButton(timeIsStarted: false)
 					}
 				}
 			}
 			
-			
 		}) { (failureError) in
-			SVProgressHUD.showErrorWithStatus(failureError.description)
-			SVProgressHUD.dismissWithDelay(3.0)
+            print("failureError: \(failureError)")
+            SVProgressHUD.showErrorWithStatus(failureError.description)
+            SVProgressHUD.dismissWithDelay(3.0)
 		}
 	}
-	
 	
 	//MARK: Actions
 	//MARK:
@@ -87,32 +86,12 @@ class STMainViewController: STBaseViewController {
 		SVProgressHUD.show()
 		
 		if timeIsStarted {
-			userConnector.stopTime({
-				SVProgressHUD.dismiss()
-                self.timer.invalidate()
-				self.changeTitleButton(timeIsStarted: false)
-
-            }, failureBlock: { (failureError) in
-                print("failureError: \(failureError)")
-                SVProgressHUD.showErrorWithStatus(failureError.description)
-                SVProgressHUD.dismissWithDelay(3.0)
-			})
+			self.sendRequestToStopTimer()
 
 		} else {
-			userConnector.startTime({
-				SVProgressHUD.dismiss()
-                self.startTimer()
-				self.changeTitleButton(timeIsStarted: true)
-                
-				}, failureBlock: { (failureError) in
-					print("failureError: \(failureError)")
-					SVProgressHUD.dismiss()
-					SVProgressHUD.showErrorWithStatus(failureError.description)
-					SVProgressHUD.dismissWithDelay(3.0)
-			})
-		}
+            self.sendRequestToStartTimer()
+        }
 	}
-	
 	
 	@IBAction func logOutButtonPressed(sender: AnyObject) {
 		
@@ -134,7 +113,6 @@ class STMainViewController: STBaseViewController {
 		}
 	}
 	
-	
 	//MARK:OTHER
 	//MARK:
 	func changeTitleButton(timeIsStarted isStarted: Bool) -> Void {
@@ -153,6 +131,18 @@ class STMainViewController: STBaseViewController {
     
     func startTimer() {
         
+      self.getHourMinuteSecondFromTimeWorked()
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0,
+                                               target: self,
+                                             selector: #selector(updateTime),
+                                             userInfo: nil,
+                                              repeats: true)
+        
+        self.timer.fire()
+    }
+    
+    func getHourMinuteSecondFromTimeWorked() {
         let timeFormatter: NSDateFormatter = NSDateFormatter()
         timeFormatter.calendar = NSCalendar.currentCalendar()
         timeFormatter.timeZone = NSTimeZone.localTimeZone()
@@ -164,16 +154,7 @@ class STMainViewController: STBaseViewController {
         self.hours = components.hour
         self.minutes = components.minute
         self.seconds = components.second
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0,
-                                               target: self,
-                                             selector: #selector(updateTime),
-                                             userInfo: nil,
-                                              repeats: true)
-        
-        self.timer.fire()
     }
-    
     
     func updateTime(timer: NSTimer) {
 
@@ -192,6 +173,65 @@ class STMainViewController: STBaseViewController {
         timeLabel.text = " \(String(format: "%02d", self.hours)) : \(String(format: "%02d", self.minutes)) : \(String(format: "%02d", self.seconds)) "
     }
     
+    
+    func sendRequestToStopTimer() -> Void {
+        
+        userConnector.stopTime({(responseValue) in
+            
+                SVProgressHUD.dismiss()
+                
+                if let responseValue = responseValue {
+                    if responseValue == "Session expired" {
+                       self.sendRelogInRequest(callAgainMethod: self.sendRequestToStopTimer)
+                    }
+                        
+                    else {
+                        self.timer.invalidate()
+                        self.changeTitleButton(timeIsStarted: false)
+                    }
+                }
+                
+            }, failureBlock: { (failureError) in
+                print("failureError: \(failureError)")
+                SVProgressHUD.showErrorWithStatus(failureError.description)
+                SVProgressHUD.dismissWithDelay(3.0)
+                
+        })
+    }
+    
+    func sendRequestToStartTimer() {
+        
+        userConnector.startTime({(responseValue) in
+            
+            SVProgressHUD.dismiss()
+            
+            if let responseValue = responseValue {
+                print("\(responseValue)")
+                
+                if responseValue == "Session expired" {
+                    self.sendRelogInRequest(callAgainMethod: self.sendRequestToStartTimer)
+                }
+                else {
+                    self.startTimer()
+                    self.changeTitleButton(timeIsStarted: true)
+                }
+            }
+            
+        }, failureBlock: { (failureError) in
+              print("failureError: \(failureError)")
+              SVProgressHUD.dismiss()
+              SVProgressHUD.showErrorWithStatus(failureError.description)
+              SVProgressHUD.dismissWithDelay(3.0)
+        })
+    }
+    
+    func sendRelogInRequest(callAgainMethod recursiveMethod:()-> ()) {
+        
+            self.statisticConnector.reLogIn(succesBlock: {
+                
+                recursiveMethod()
+                }, failureBlock: { (failureError) in })
+    }
     
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
