@@ -46,38 +46,6 @@ class STMainViewController: STBaseViewController {
         
     }
 	
-	func getStatisticInfo() -> Void {
-		
-		SVProgressHUD.dismiss()
-		SVProgressHUD.show()
-		
-		statisticConnector.getStatisticInfo({ (timeStatistic) in
-			
-			SVProgressHUD.dismiss()
-			
-			if let timeS = timeStatistic {
-                appDelegate.user.userTime = timeS
-                self.timeLabel.text = appDelegate.user.userTime?.timeWorked
-
-				if let loggedIn = timeS.loggedIn {
-					if loggedIn {
-						self.changeTitleButton(timeIsStarted: true)
-                        self.startTimer()
-					
-					} else {
-                        self.timer.invalidate()
-						self.changeTitleButton(timeIsStarted: false)
-					}
-				}
-			}
-			
-		}) { (failureError) in
-            print("failureError: \(failureError)")
-            SVProgressHUD.showErrorWithStatus(failureError.description)
-            SVProgressHUD.dismissWithDelay(3.0)
-		}
-	}
-	
 	//MARK: Actions
 	//MARK:
 	@IBAction func stopStartTimeButtonPressed(sender: AnyObject) {
@@ -112,23 +80,9 @@ class STMainViewController: STBaseViewController {
                   SVProgressHUD.dismissWithDelay(3.0)
 		}
 	}
-	
-	//MARK:OTHER
-	//MARK:
-	func changeTitleButton(timeIsStarted isStarted: Bool) -> Void {
-		
-		if  isStarted {
-			timeIsStarted = isStarted
-			self.stopStartButton.setTitle("Stop Time", forState: .Normal)
-			self.stopStartButton.backgroundColor = UIColor.redColor()
-		
-		} else {
-			timeIsStarted = isStarted
-			self.stopStartButton.setTitle("Start Time", forState: .Normal)
-			self.stopStartButton.backgroundColor = UIColor.greenColor()
-		}
-	}
     
+    //MARK: Time
+    //MARK:
     func startTimer() {
         
       self.getHourMinuteSecondFromTimeWorked()
@@ -143,6 +97,7 @@ class STMainViewController: STBaseViewController {
     }
     
     func getHourMinuteSecondFromTimeWorked() {
+        
         let timeFormatter: NSDateFormatter = NSDateFormatter()
         timeFormatter.calendar = NSCalendar.currentCalendar()
         timeFormatter.timeZone = NSTimeZone.localTimeZone()
@@ -154,6 +109,7 @@ class STMainViewController: STBaseViewController {
         self.hours = components.hour
         self.minutes = components.minute
         self.seconds = components.second
+        
     }
     
     func updateTime(timer: NSTimer) {
@@ -172,7 +128,40 @@ class STMainViewController: STBaseViewController {
         
         timeLabel.text = " \(String(format: "%02d", self.hours)) : \(String(format: "%02d", self.minutes)) : \(String(format: "%02d", self.seconds)) "
     }
-    
+
+    //MARK: REQUESTS
+    //MARK:
+    func getStatisticInfo() -> Void {
+        
+        SVProgressHUD.dismiss()
+        SVProgressHUD.show()
+        
+        statisticConnector.getStatisticInfo({ (timeStatistic) in
+            
+            SVProgressHUD.dismiss()
+            
+            if let timeS = timeStatistic {
+                appDelegate.user.userTime = timeS
+                self.timeLabel.text = appDelegate.user.userTime?.timeWorked
+                
+                if let loggedIn = timeS.loggedIn {
+                    if loggedIn {
+                        self.changeTitleButton(timeIsStarted: true)
+                        self.startTimer()
+                        
+                    } else {
+                        self.timer.invalidate()
+                        self.changeTitleButton(timeIsStarted: false)
+                    }
+                }
+            }
+            
+        }) { (failureError) in
+            print("failureError: \(failureError)")
+            SVProgressHUD.showErrorWithStatus(failureError.description)
+            SVProgressHUD.dismissWithDelay(3.0)
+        }
+    }
     
     func sendRequestToStopTimer() -> Void {
         
@@ -231,6 +220,22 @@ class STMainViewController: STBaseViewController {
                 
                 recursiveMethod()
                 }, failureBlock: { (failureError) in })
+    }
+    
+    //MARK:OTHER
+    //MARK:
+    func changeTitleButton(timeIsStarted isStarted: Bool) -> Void {
+        
+        if  isStarted {
+            timeIsStarted = isStarted
+            self.stopStartButton.setTitle("Stop Time", forState: .Normal)
+            self.stopStartButton.backgroundColor = UIColor.redColor()
+            
+        } else {
+            timeIsStarted = isStarted
+            self.stopStartButton.setTitle("Start Time", forState: .Normal)
+            self.stopStartButton.backgroundColor = UIColor.greenColor()
+        }
     }
     
 	override func didReceiveMemoryWarning() {
