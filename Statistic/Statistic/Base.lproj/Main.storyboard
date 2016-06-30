@@ -125,47 +125,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhZ-Sm-Gvr">
-                                <rect key="frame" x="20" y="35" width="55" height="30"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNf-Fp-Jpc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhZ-Sm-Gvr">
+                                        <rect key="frame" x="27" y="26" width="55" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="cjb-0i-StO"/>
+                                            <constraint firstAttribute="width" constant="55" id="vDd-7Q-n2b"/>
+                                        </constraints>
+                                        <state key="normal" title="Log Out"/>
+                                        <connections>
+                                            <action selector="logOutButtonPressed:" destination="tHk-qG-10j" eventType="touchUpInside" id="Nnd-Yu-Tm9"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osp-5k-Ryi">
+                                        <rect key="frame" x="0.0" y="116" width="320" height="224"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="pBf-Xw-IfS">
+                                                <rect key="frame" x="20" y="68" width="280" height="88"/>
+                                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="73"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrV-xQ-Bar">
+                                                <rect key="frame" x="65" y="189" width="190" height="35"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="190" id="NLT-PC-XoE"/>
+                                                    <constraint firstAttribute="height" constant="35" id="fya-Fd-t47"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="hNO-St-LHb"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Start Time Button"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="NLT-PC-XoE"/>
+                                                        <exclude reference="hNO-St-LHb"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="stopStartTimeButtonPressed:" destination="tHk-qG-10j" eventType="touchUpInside" id="Qmu-Bv-xpq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="nrV-xQ-Bar" firstAttribute="leading" secondItem="osp-5k-Ryi" secondAttribute="leading" constant="55" id="ESB-br-k6L"/>
+                                            <constraint firstAttribute="trailing" secondItem="pBf-Xw-IfS" secondAttribute="trailing" constant="20" id="KwI-kL-mQd"/>
+                                            <constraint firstAttribute="trailing" secondItem="nrV-xQ-Bar" secondAttribute="trailing" constant="65" id="N0k-tV-Cdp"/>
+                                            <constraint firstItem="pBf-Xw-IfS" firstAttribute="top" secondItem="osp-5k-Ryi" secondAttribute="top" constant="68" id="ObW-di-Z7n"/>
+                                            <constraint firstItem="nrV-xQ-Bar" firstAttribute="top" secondItem="pBf-Xw-IfS" secondAttribute="bottom" constant="33" id="TXk-nn-twm"/>
+                                            <constraint firstAttribute="bottom" secondItem="nrV-xQ-Bar" secondAttribute="bottom" id="ii6-1c-jxk"/>
+                                            <constraint firstAttribute="height" constant="224" id="j61-P2-nc7"/>
+                                            <constraint firstAttribute="trailing" secondItem="nrV-xQ-Bar" secondAttribute="trailing" id="jvs-WE-pmF"/>
+                                            <constraint firstItem="pBf-Xw-IfS" firstAttribute="leading" secondItem="osp-5k-Ryi" secondAttribute="leading" constant="20" id="tGx-Vf-f6O"/>
+                                            <constraint firstItem="nrV-xQ-Bar" firstAttribute="leading" secondItem="osp-5k-Ryi" secondAttribute="leading" constant="65" id="x16-G0-EJH"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ESB-br-k6L"/>
+                                                <exclude reference="ii6-1c-jxk"/>
+                                                <exclude reference="jvs-WE-pmF"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="cjb-0i-StO"/>
-                                    <constraint firstAttribute="width" constant="55" id="vDd-7Q-n2b"/>
+                                    <constraint firstAttribute="trailing" secondItem="osp-5k-Ryi" secondAttribute="trailing" id="5Uw-uZ-xuc"/>
+                                    <constraint firstItem="osp-5k-Ryi" firstAttribute="centerY" secondItem="QNf-Fp-Jpc" secondAttribute="centerY" constant="-31.5" id="A8g-8m-ope"/>
+                                    <constraint firstItem="RhZ-Sm-Gvr" firstAttribute="leading" secondItem="QNf-Fp-Jpc" secondAttribute="leading" constant="27" id="ZZJ-Kd-iNI"/>
+                                    <constraint firstItem="osp-5k-Ryi" firstAttribute="top" secondItem="RhZ-Sm-Gvr" secondAttribute="bottom" constant="60" id="ZeJ-pK-a0I"/>
+                                    <constraint firstItem="osp-5k-Ryi" firstAttribute="leading" secondItem="QNf-Fp-Jpc" secondAttribute="leading" id="bxp-ds-Ezw"/>
+                                    <constraint firstAttribute="bottom" secondItem="osp-5k-Ryi" secondAttribute="bottom" constant="179" id="cnD-xp-iGG"/>
+                                    <constraint firstItem="osp-5k-Ryi" firstAttribute="centerX" secondItem="QNf-Fp-Jpc" secondAttribute="centerX" id="mTB-fd-E5M"/>
                                 </constraints>
-                                <state key="normal" title="Log Out"/>
-                                <connections>
-                                    <action selector="logOutButtonPressed:" destination="tHk-qG-10j" eventType="touchUpInside" id="Nnd-Yu-Tm9"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="pBf-Xw-IfS">
-                                <rect key="frame" x="20" y="99" width="280" height="88"/>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="73"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrV-xQ-Bar">
-                                <rect key="frame" x="50" y="297" width="220" height="35"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="fya-Fd-t47"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Start Time Button"/>
-                                <connections>
-                                    <action selector="stopStartTimeButtonPressed:" destination="tHk-qG-10j" eventType="touchUpInside" id="Qmu-Bv-xpq"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nrV-xQ-Bar" firstAttribute="leading" secondItem="kXa-az-Fr7" secondAttribute="leading" constant="50" id="7i5-pu-pHN"/>
-                            <constraint firstItem="pBf-Xw-IfS" firstAttribute="top" secondItem="RhZ-Sm-Gvr" secondAttribute="bottom" constant="34" id="AHZ-HC-ibi"/>
-                            <constraint firstItem="nrV-xQ-Bar" firstAttribute="top" secondItem="pBf-Xw-IfS" secondAttribute="bottom" constant="110" id="AQ5-x6-eGo"/>
-                            <constraint firstAttribute="trailing" secondItem="nrV-xQ-Bar" secondAttribute="trailing" constant="50" id="BrF-lE-gZn"/>
-                            <constraint firstItem="RhZ-Sm-Gvr" firstAttribute="leading" secondItem="kXa-az-Fr7" secondAttribute="leading" constant="20" id="WhR-Ox-sCo"/>
-                            <constraint firstItem="nrV-xQ-Bar" firstAttribute="centerX" secondItem="kXa-az-Fr7" secondAttribute="centerX" id="gKu-Rw-a8k"/>
-                            <constraint firstItem="pBf-Xw-IfS" firstAttribute="leading" secondItem="kXa-az-Fr7" secondAttribute="leading" constant="20" id="gQT-4n-KNi"/>
-                            <constraint firstAttribute="trailing" secondItem="pBf-Xw-IfS" secondAttribute="trailing" constant="20" id="lEq-EM-25d"/>
-                            <constraint firstItem="RhZ-Sm-Gvr" firstAttribute="top" secondItem="M6i-g9-oUd" secondAttribute="bottom" constant="15" id="u2q-wA-uPC"/>
+                            <constraint firstItem="QNf-Fp-Jpc" firstAttribute="leading" secondItem="kXa-az-Fr7" secondAttribute="leading" id="JU8-YA-tj6"/>
+                            <constraint firstItem="QNf-Fp-Jpc" firstAttribute="top" secondItem="kXa-az-Fr7" secondAttribute="top" id="N92-fP-v6p"/>
+                            <constraint firstItem="6y9-PE-qPS" firstAttribute="top" secondItem="QNf-Fp-Jpc" secondAttribute="bottom" id="REA-4A-e84"/>
+                            <constraint firstAttribute="trailing" secondItem="QNf-Fp-Jpc" secondAttribute="trailing" id="RTv-PI-GDT"/>
+                            <constraint firstItem="QNf-Fp-Jpc" firstAttribute="leading" secondItem="kXa-az-Fr7" secondAttribute="leading" id="iBo-nD-1Qd"/>
+                            <constraint firstAttribute="trailing" secondItem="QNf-Fp-Jpc" secondAttribute="trailing" id="wp6-Ki-mHf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Time" id="3BR-mn-3CJ">
@@ -222,6 +267,6 @@
         <image name="logo_winify.png" width="215" height="59"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UOk-MH-AW5"/>
+        <segue reference="l72-Tk-1T9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		472B879F1D1939310025B810 /* STTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B879E1D1939310025B810 /* STTimer.swift */; };
 		473FFED61CE5CBE3003BBABE /* STConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473FFED51CE5CBE3003BBABE /* STConnector.swift */; };
 		473FFED81CE5DE9C003BBABE /* STUserConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473FFED71CE5DE9C003BBABE /* STUserConnector.swift */; };
 		473FFEDD1CE60EB6003BBABE /* logo_winify.png in Resources */ = {isa = PBXBuildFile; fileRef = 473FFEDC1CE60EB6003BBABE /* logo_winify.png */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		472B879E1D1939310025B810 /* STTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STTimer.swift; sourceTree = "<group>"; };
 		473FFED51CE5CBE3003BBABE /* STConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STConnector.swift; sourceTree = "<group>"; };
 		473FFED71CE5DE9C003BBABE /* STUserConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STUserConnector.swift; sourceTree = "<group>"; };
 		473FFEDC1CE60EB6003BBABE /* logo_winify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_winify.png; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				4744A7601CDCAA82000D022B /* STUser.swift */,
 				474C48CF1CECD09000950C51 /* STNotificationManager.swift */,
 				4744CD351D01D2FF00C22243 /* NSDateExtension.swift */,
+				472B879E1D1939310025B810 /* STTimer.swift */,
 				474751041CEB02C200995B80 /* View Controllers */,
 				474751071CEB11D000995B80 /* Connectors */,
 				474751081CEB12C400995B80 /* Object Mapper */,
@@ -442,6 +445,7 @@
 				47E921941CEA01A5002DD95B /* STTimeStatisticMapper.swift in Sources */,
 				473FFED61CE5CBE3003BBABE /* STConnector.swift in Sources */,
 				47E921921CE9D584002DD95B /* STMainViewController.swift in Sources */,
+				472B879F1D1939310025B810 /* STTimer.swift in Sources */,
 				47E921901CE9CD3C002DD95B /* STUserMapper.swift in Sources */,
 				47E22A6B1CEB36060006CE41 /* STAppConstants.swift in Sources */,
 				473FFED81CE5DE9C003BBABE /* STUserConnector.swift in Sources */,

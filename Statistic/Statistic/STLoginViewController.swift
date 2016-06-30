@@ -38,7 +38,7 @@ class STLoginViewController: STBaseViewController {
 			self.userNameTextField.text = tmpUserN
 		}
 		
-//		self.userNameTextField.text! = "mcostraci"
+		self.userNameTextField.text! = "mcostraci"
 		self.passwordTextField.text! = "Roller.sl92"
 	}
 
